@@ -13,11 +13,11 @@ components:
 
 categories:    necessary       | unnecessary        | groceries  | Restaurant | temporary    | taxable       | non-taxable
 subcategories: business        |entertainment       | for home   | alone      | subscriptions| income/wage   | contribution	 
-	       bills/utilities |gifts               | for others | with others|	             | interest      | gift
-	       education       |shopping					             | capital gains | refund
-	       medical         |super contributions |					     | shares        | termination payment
-	       insurance       |
-	       travel
+	       	   bills/utilities |gifts               | for others | with others|	             | interest      | gift
+	       	   education       |shopping					             | capital gains | refund
+	       	   medical         |super contributions |					     | shares        | termination payment
+	           insurance       |
+	           travel
 
 expenses:
 necessary: expenses related to non-consumable assets or services deemed required for the preservation of the person and assets used for necessary day to day activities 
