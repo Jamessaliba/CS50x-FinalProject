@@ -1,5 +1,6 @@
 # CS50x Final Project
 final project: localised finance tracker
+pip install PyQt6
 components: 
 *main user interface
 *calculators (backend?)
