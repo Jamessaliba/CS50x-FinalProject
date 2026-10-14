@@ -1,0 +1,509 @@
+code,entity,amount,category,sub-category,transaction,date,taxable
+UNN0001,Kmart, $ 8.00 ,Unnecessary,Shopping,Shopping,01/01/2026,FALSE
+GRO0001,Coles, $ 5.00 ,Groceries,For home,For home,01/01/2026,FALSE
+NEC0001,Jolene, $ 88.00 ,Necessary,Bills/utilities,Rent,01/01/2026,FALSE
+GRO0002,Coles, $ 3.00 ,Groceries,For home,For home,02/01/2026,FALSE
+GRO0003,ALDI, $ 15.72 ,Groceries,For others,For others,03/01/2026,FALSE
+GRO0004,Coles, $ 12.00 ,Groceries,For home,For home,03/01/2026,FALSE
+TEM0001,Spotify,$15.99,Temporary,Subscriptions,Subscription,04/01/2026,FALSE
+RES0001,Bakers delight,$4.96,Restaurant,Alone,Alone,07/01/2026,FALSE
+NEC0002,Origin,$68.00,Necessary,Bills/utilities,Bills,09/01/2026,FALSE
+GRO0005,Coles,$28.59,Groceries,For home,For home,03/01/2026,FALSE
+UNN0002,Edrolo,$90.59,Unnecessary,Education,Text books for marly,04/01/2026,FALSE
+UNN0003,Clean fades,$37.00,Unnecessary,Shopping,Hair cut,04/01/2026,FALSE
+RES0002,Kfc,$43.95,Restaurant,With Others,With others,04/01/2026,FALSE
+RES0003,Hungry jacks,$17.35,Restaurant,With Others,With others,05/01/2026,FALSE
+GRO0006,Aldi,$11.20,Groceries,For others,For others,05/01/2026,FALSE
+GRO0007,Coles,$51.35,Groceries,For home,For home,07/01/2026,FALSE
+RES0004,Burgetory,$51.87,Restaurant,With Others,With others,08/01/2026,FALSE
+NEC0003,Metro petroleum,$40.25,Necessary,Transport,Fuel,09/01/2026,FALSE
+UNN0004,Jay jays,$60.00,Unnecessary,Gifts,Gift,09/01/2026,FALSE
+RES0005,Kfc,$4.95,Restaurant,Alone,Alone,10/01/2026,FALSE
+RES0006,Mum,$35.00,Restaurant,With Others,"With others, lafamilia",10/01/2026,FALSE
+GRO0008,Coles,$41.05,Groceries,For home,For home,13/01/2026,FALSE
+GRO0009,Coles,$61.88,Groceries,For home,For home,15/01/2026,FALSE
+NEC0004,Metro petroleum,$43.29,Necessary,Transport,Fuel,16/01/2026,FALSE
+RES0007,Kfc,$29.35,Restaurant,With Others,With others,16/01/2026,FALSE
+GRO0010,Coles,$22.00,Groceries,For home,For home,11/01/2026,FALSE
+GRO0011,Woolworths,$8.40,Groceries,For home,For home,13/01/2026,FALSE
+RES0008,Altona beach bites,$42.66,Restaurant,With Others,With others,17/01/2026,FALSE
+GRO0012,Woolworths,$4.50,Groceries,For home,For home,19/01/2026,FALSE
+GRO0013,The trustee for tran family,$10.07,Groceries,For home,For home,20/01/2026,FALSE
+GRO0014,Coles,$12.50,Groceries,For home,For home,20/01/2026,FALSE
+NEC0005,Youi insureence,$212.27,Necessary,Insurence,Bills,21/01/2026,FALSE
+GRO0015,Woolworths,$16.20,Groceries,For home,For home,22/01/2026,FALSE
+RES0009,Mcdonalds,$17.75,Restaurant,With Others,With others,23/01/2026,FALSE
+UNN0005,Aldi,$5.58,Unnecessary,Shopping,Food,23/01/2026,FALSE
+UNN0006,Gameology,$10.95,Unnecessary,Entertainment,Games,24/01/2026,FALSE
+UNN0007,Playstation,$32.67,Unnecessary,Entertainment,Games,25/01/2026,FALSE
+GRO0016,Coles,$34.20,Groceries,For home,For home,25/01/2026,FALSE
+GRO0017,Woolworths,$1.90,Groceries,For home,For home,27/01/2026,FALSE
+UNN0008,Kmart,$23.00,Unnecessary,Shopping,Shopping,27/01/2026,FALSE
+UNN0009,Circum tec,$12.50,Unnecessary,Shopping,Car wash,28/01/2026,FALSE
+UNN0010,Liquorland,$17.00,Unnecessary,Shopping,Shopping,28/01/2026,FALSE
+TEM0002,Myki,$11.00,Temporary,Transport,Transport,28/01/2026,FALSE
+GRO0018,Woolworths,$13.95,Groceries,For home,For home,29/01/2026,FALSE
+RES0010,Kfc,$10.90,Restaurant,With Others,With others,30/01/2026,FALSE
+GRO0019,Woolworths,$51.63,Groceries,For home,For home,31/01/2026,FALSE
+GRO0020,Woolworths,$25.60,Groceries,For home,For home,01/02/2026,FALSE
+GRO0021,Coles,$12.50,Groceries,For others,For others,01/02/2026,FALSE
+UNN0011,Officeworks,$3.33,Unnecessary,Education,Printing,01/02/2026,FALSE
+TEM0003,Spotify,$15.99,Temporary,Subscriptions,Subscription,02/02/2026,FALSE
+RES0011,Hungry jacks,$17.95,Restaurant,Alone,Alone,02/02/2026,FALSE
+NEC0006,Jolene,$88.00,Necessary,Bills/utilities,Rent,02/02/2026,FALSE
+RES0012,Mcdonalds,$11.80,Restaurant,Alone,Alone,03/02/2026,FALSE
+NEC0007,Metro patroleum,$49.25,Necessary,Transport,Fuel,03/02/2026,FALSE
+GRO0022,Aldi,$1.99,Groceries,For home,For home,03/02/2026,FALSE
+UNN0012,Chat gpt,$13.00,Unnecessary,Subscriptions,Subscription,04/02/2026,FALSE
+RES0013,Kfc,$4.95,Restaurant,Alone,Alone,04/02/2026,FALSE
+GRO0023,Woolworths,$6.50,Groceries,For home,For home,05/02/2026,FALSE
+UNN0013,Woolworths,$8.00,Unnecessary,Shopping,Food,06/02/2026,FALSE
+RES0014,Nene chicken,$30.73,Restaurant,With Others,With others,07/02/2026,FALSE
+UNN0014,Jb-hi-fi,$377.00,Unnecessary,For home,Shopping for home,07/02/2026,FALSE
+GRO0024,Woolworths,$13.10,Groceries,For home,For home,07/02/2026,FALSE
+GRO0025,Aldi,$11.03,Groceries,For home,For home,09/02/2026,FALSE
+NEC0008,Metro patroleum,$48.96,Necessary,Transport,Fuel,10/02/2026,FALSE
+GRO0026,Woolworths,$28.26,Groceries,For home,For home,12/02/2026,FALSE
+GRO0027,Woolworths,$26.15,Groceries,For home,For home,09/02/2026,FALSE
+NEC0009,Origin,$68.00,Necessary,Bills/utilities,Bills internet,09/02/2026,FALSE
+GRO0028,Coles,$53.35,Groceries,For home,For home,10/02/2026,FALSE
+RES0015,Koko black,$29.20,Restaurant,With Others,With others,14/02/2026,FALSE
+GRO0029,Coles,$25.00,Groceries,For others,For others,15/02/2026,FALSE
+RES0016,Mcdonalds,$43.95,Restaurant,With Others,With others,13/02/2026,FALSE
+GRO0030,Coles,$9.48,Groceries,For home,For home,15/02/2026,FALSE
+UNN0015,Apple,$6.98,Unnecessary,Entertainment,Games,15/02/2026,FALSE
+RES0017,Hungry jacks,$15.15,Restaurant,Alone,Alone,16/02/2026,FALSE
+NEC0010,Metro patroleum,$49.69,Necessary,Transport,Fuel,17/02/2026,FALSE
+NEC0011,Vic roads,$935.17,Necessary,Bills/utilities,"Rego, bills",17/02/2026,FALSE
+UNN0016,Gameology,$43.45,Unnecessary,Entertainment,Games,18/02/2026,FALSE
+GRO0031,Aldi,$16.95,Groceries,For home,For home,19/02/2026,FALSE
+RES0018,Bakers delight,$10.84,Restaurant,With Others,With others,19/02/2026,FALSE
+GRO0032,Coles,$9.70,Groceries,For home,For home,19/02/2026,FALSE
+RES0019,Mcdonalds,$14.40,Restaurant,Alone,Alone,20/02/2026,FALSE
+GRO0033,Coles,$13.85,Groceries,For home,For home,20/02/2026,FALSE
+GRO0034,Coles,$12.00,Groceries,For home,For home,22/02/2026,FALSE
+GRO0035,Woolworths,$16.05,Groceries,For home,For home,23/02/2026,FALSE
+GRO0036,Woolworths,$21.00,Groceries,For home,For home,24/02/2026,FALSE
+NEC0012,Metro petroleum,$46.15,Necessary,Transport,Fuel,25/02/2026,FALSE
+RES0020,Mcdonalds,$14.05,Restaurant,Alone,Alone,26/02/2026,FALSE
+UNN0017,Melbourne,$2.00,Unnecessary,Transport,Parking,28/02/2026,FALSE
+UNN0018,Jolene,$60.00,Unnecessary,Entertainment,"Entertainment, zoo",28/02/2026,FALSE
+RES0021,Melbourne zoo,$21.4,Restaurant,With Others,With others,28/02/2026,FALSE
+GRO0037,Woolworths,$25.72,Groceries,For others,For others,01/03/2026,FALSE
+UNN0019,Dungeondraft,$28.27,Unnecessary,Shopping,"Software, humble bundle",01/03/2026,FALSE
+NEC0013,Jolene,$88.00,Necessary,Bills/utilities,Rent,01/03/2026,FALSE
+UNN0020,Bunnings,$1.00,Unnecessary,Gifts,Gift,01/03/2026,FALSE
+TEM0004,Spotify,$15.99,Temporary,Subscriptions,Subscription,02/03/2026,FALSE
+RES0022,Kfc,$4.95,Restaurant,Alone,Alone,02/03/2026,FALSE
+GRO0038,Woolworths,$4.50,Groceries,For home,For home,03/03/2026,FALSE
+UNN0021,Openai,$13.00,Unnecessary,Subscriptions,Subscription,04/03/2026,FALSE
+NEC0014,Metro patroleum,$51.62,Necessary,Transport,Fuel,05/03/2026,FALSE
+RES0023,Kfc,$4.95,Restaurant,Alone,Alone,05/03/2026,FALSE
+UNN0022,Woolworths,$5.61,Unnecessary,Shopping,Food,06/03/2026,FALSE
+RES0024,Subway,$10.85,Restaurant,Alone,Alone,06/03/2026,FALSE
+GRO0039,Coles,$23.42,Groceries,For home,For home,08/03/2026,FALSE
+RES0025,Kfc,$12.45,Restaurant,Alone,Alone,09/03/2026,FALSE
+GRO0040,Coles,$16.00,Groceries,For home,For home,09/03/2026,FALSE
+RES0026,Little sparrow,$43.50,Restaurant,With Others,With others,07/03/2026,FALSE
+UNN0023,Kmart,$12.50,Unnecessary,Shopping,Shopping,07/03/2026,FALSE
+UNN0024,Daiso,$9.00,Unnecessary,Shopping,Shopping,07/03/2026,FALSE
+UNN0025,Eb games,$5.00,Unnecessary,Entertainment,Games,08/03/2026,FALSE
+GRO0041,Coles,$74.70,Groceries,For home,For home,09/03/2026,FALSE
+NEC0015,Origin,$68.00,Necessary,Bills/utilities,Bills,09/03/2026,FALSE
+GRO0042,Coles,$11.00,Groceries,For home,For home,10/03/2026,FALSE
+GRO0043,Woolworths,$18.89,Groceries,For home,For home,10/03/2026,FALSE
+NEC0016,Metro patroleum,$39.41,Necessary,Transport,Fuel,10/03/2026,FALSE
+GRO0044,Aldi,$10.98,Groceries,For home,For home,11/03/2026,FALSE
+UNN0026,Woolworths,$1.00,Unnecessary,Shopping,Food,12/03/2026,FALSE
+UNN0027,Anytime fitness,$75.00,Unnecessary,Subscriptions,Subscription,12/03/2026,FALSE
+GRO0045,Coles,$9.15,Groceries,For home,For home,12/03/2026,FALSE
+RES0027,Mcdonalds,$17.10,Restaurant,Alone,Alone,13/03/2026,FALSE
+UNN0028,Officeworks,$18.90,Unnecessary,Entertainment,Games,14/03/2026,FALSE
+NEC0017,Shell reddy,$44.69,Necessary,Transport,Fuel,14/03/2026,FALSE
+GRO0046,Coles,$25.78,Groceries,For home,25.78,15/03/2026,FALSE
+UNN0029,Bakers delight,$5.88,Unnecessary,Shopping,Food,16/03/2026,FALSE
+GRO0047,Liquorland,$17.00,Groceries,For home,For home,16/03/2026,FALSE
+NEC0018,Metro patroleum,$49.96,Necessary,Transport,Fuel,17/03/2026,FALSE
+UNN0030,Woolworths,$0.86,Unnecessary,Shopping,Food,18/03/2026,FALSE
+NEC0019,Origin,$387.95,Necessary,Bills/utilities,"Electricity, bills",18/03/2026,FALSE
+GRO0048,Coles,$4.50,Groceries,For home,For home,18/03/2026,FALSE
+GRO0049,Coles,$18.08,Groceries,For home,For home,19/03/2026,FALSE
+GRO0050,Coles,$51.40,Groceries,For home,For home,20/03/2026,FALSE
+UNN0031,Officeworks,$16.11,Unnecessary,Entertainment,Games,21/03/2026,FALSE
+RES0028,Ten one eight,$13.12,Restaurant,Alone,Alone,21/03/2026,FALSE
+UNN0032,Aldi,$3.24,Unnecessary,Shopping,Food,21/03/2026,FALSE
+UNN0033,Ebgames,$5.00,Unnecessary,Entertainment,Games,21/03/2026,FALSE
+RES0029,Kfc,$4.95,Restaurant,With Others,With others,21/03/2026,FALSE
+GRO0051,Coles,$21.96,Groceries,For others,For others,22/03/2026,FALSE
+RES0030,Bakers delight,$5.88,Restaurant,Alone,Alone,22/03/2026,FALSE
+GRO0052,Aldi,$4.89,Groceries,For home,For home,22/03/2026,FALSE
+NEC0020,Shell reddy,$48.74,Necessary,Transport,Fuel,22/03/2026,FALSE
+NEC0021,Youi insurance,$212.27,Necessary,Insurence,Bills,23/03/2026,FALSE
+RES0031,Hungry jacks,$15.25,Restaurant,Alone,Alone,23/03/2026,FALSE
+GRO0053,Woolworths,$18.35,Groceries,For home,For home,24/03/2026,FALSE
+RES0032,Bakers delight,$5.88,Restaurant,Alone,Alone,24/03/2026,FALSE
+GRO0054,Coles,$34.25,Groceries,For home,For home,24/03/2026,FALSE
+NEC0022,Metro petroleum,$68.16,Necessary,Transport,Fuel,25/03/2026,FALSE
+GRO0055,Aldi,$18.48,Groceries,For home,For home,26/03/2026,FALSE
+GRO0056,Coles,$3.20,Groceries,For home,For home,26/03/2026,FALSE
+GRO0057,Woolworths,$18.79,Groceries,For home,For home,27/03/2026,FALSE
+RES0033,Mcdonalds,$14.40,Restaurant,Alone,Alone,27/03/2026,FALSE
+UNN0034,Coles,$2.10,Unnecessary,Shopping,Food,27/03/2026,FALSE
+UNN0035,Officeworks,$0.77,Unnecessary,Entertainment,Games,28/03/2026,FALSE
+GRO0058,Woolworths,$10.95,Groceries,For home,For home,28/03/2026,FALSE
+RES0034,Mcdonalds,$6.95,Restaurant,With Others,With others,28/03/2026,FALSE
+RES0035,Kfc,$27.90,Restaurant,With Others,With others,28/03/2026,FALSE
+UNN0036,Kmart,$19.00,Unnecessary,Shopping,Shopping,29/03/2026,FALSE
+GRO0059,Aldi,$35.82,Groceries,For others,For others,29/03/2026,FALSE
+GRO0060,Coles,$6.40,Groceries,For home,For home,29/03/2026,FALSE
+RES0036,Baker delight,$3.73,Restaurant,Alone,Alone,29/03/2026,FALSE
+NEC0023,Metro petroleum,$81.35,Necessary,Transport,Fuel,30/03/2026,FALSE
+RES0037,Mcdonalds,$13.15,Restaurant,Alone,Alone,30/03/2026,FALSE
+GRO0061,Coles,$51.30,Groceries,For home,For home,30/03/2026,FALSE
+GRO0062,Woolworths,$19.13,Groceries,For home,For home,31/03/2026,FALSE
+GRO0063,Woolworths,$18.80,Groceries,For home,For home,01/04/2026,FALSE
+TEM0005,Anytime fitness,$242.60,Temporary,Subscriptions,Subscription,01/04/2026,FALSE
+TEM0006,Spotify,$15.99,Temporary,Subscriptions,Subscription,02/04/2026,FALSE
+GRO0064,Woolworths,$15.37,Groceries,For home,For home,02/04/2026,FALSE
+UNN0037,Apple,$14.99,Unnecessary,Entertainment,Games,03/04/2026,FALSE
+NEC0024,Jolene,$695.50,Necessary,Bills/utilities,Rent,03/04/2026,FALSE
+UNN0038,Sea life aquarium,$98.00,Unnecessary,Entertainment,Entertainment,03/04/2026,FALSE
+RES0038,Kfc,$20.95,Restaurant,Alone,Alone,03/04/2026,FALSE
+RES0039,Mcdonalds,$19.30,Restaurant,With Others,With others,03/04/2026,FALSE
+NEC0025,Apco,$40.51,Necessary,Transport,Fuel,04/04/2026,FALSE
+RES0040,Mcdonalds,$6.95,Restaurant,With Others,With others,04/04/2026,FALSE
+UNN0039,Openai,$13.00,Unnecessary,Subscriptions,Subscription,04/04/2026,FALSE
+GRO0065,Woolworths,$60.02,Groceries,For home,For home,04/04/2026,FALSE
+RES0041,Sea life,$5.00,Restaurant,Alone,Alone,05/04/2026,FALSE
+RES0042,Kfc,$37.45,Restaurant,With Others,With others,05/04/2026,FALSE
+UNN0040,Officeworks,$4.75,Unnecessary,Entertainment,Games,06/04/2026,FALSE
+GRO0066,Coles,$18.55,Groceries,For home,For home,06/04/2026,FALSE
+GRO0067,Woolworths,$27.86,Groceries,For home,For home,07/04/2026,FALSE
+NEC0026,Origin,$68.00,Necessary,Bills/utilities,"Internet, bills",08/04/2026,FALSE
+UNN0041,Ticketek,$205.75,Unnecessary,Entertainment,Entertainment,08/04/2026,FALSE
+RES0043,Kfc,$4.95,Restaurant,Alone,Alone,09/04/2026,FALSE
+GRO0068,Coles,$61.95,Groceries,For home,For home,09/04/2026,FALSE
+GRO0069,Woolworths,$1.10,Groceries,For home,For home,10/04/2026,FALSE
+NEC0027,Apco,$34.18,Necessary,Transport,Fuel,10/04/2026,FALSE
+RES0044,Mcdonalds,$29.80,Restaurant,With Others,With others,09/04/2026,FALSE
+GRO0070,Coles,$7.50,Groceries,For home,For home,13/04/2026,FALSE
+UNN0042,Point parking,$5.12,Unnecessary,Transport,Parking,11/04/2026,FALSE
+GRO0071,Dan murphy's,$6.49,Groceries,For home,For home,11/04/2026,FALSE
+UNN0043,B.lucky & sons,$35.00,Unnecessary,Entertainment,Games,12/04/2026,FALSE
+RES0045,Hungry jacks,$15.25,Restaurant,Alone,Alone,13/04/2026,FALSE
+GRO0072,Coles,$7.50,Groceries,For home,For home,13/04/2026,FALSE
+GRO0073,Woolworths,$37.28,Groceries,For home,For home,14/04/2026,FALSE
+GRO0074,Woolworths,$12.20,Groceries,For home,For home,15/04/2026,FALSE
+GRO0075,Coles,$13.20,Groceries,For home,For home,16/04/2026,FALSE
+RES0046,Kfc,$4.95,Restaurant,Alone,Alone,16/04/2026,FALSE
+GRO0076,Woolworths,$1.20,Groceries,For home,For home,17/04/2026,FALSE
+RES0047,Mcdonalds,$14.20,Restaurant,Alone,Alone,17/04/2026,FALSE
+NEC0028,Apco,$56.13,Necessary,Transport,Fuel,17/04/2026,FALSE
+UNN0044,Officeworks,$0.22,Unnecessary,Entertainment,Games,18/04/2026,FALSE
+RES0048,Mcdonalds,$21.75,Restaurant,With Others,With others,18/04/2026,FALSE
+UNN0045,Steam,$11.60,Unnecessary,Entertainment,Games,19/04/2026,FALSE
+GRO0077,Aldi,$4.79,Groceries,For home,For home,19/04/2026,FALSE
+GRO0078,Coles,$25.85,Groceries,For home,For home,19/04/2026,FALSE
+UNN0046,Liquorland,$18.00,Unnecessary,Shopping,Food,19/04/2026,FALSE
+GRO0079,Coles,$6.00,Groceries,For home,For home,20/04/2026,FALSE
+UNN0047,Walkers,$10.07,Unnecessary,Shopping,Food,20/04/2026,FALSE
+GRO0080,Woolworths,$47.65,Groceries,For home,For home,21/04/2026,FALSE
+GRO0081,Woolworths,$19.42,Groceries,For home,For home,23/04/2026,FALSE
+GRO0082,Coles,$5.00,Groceries,For home,For home,23/04/2026,FALSE
+RES0049,Mcdonalds,$9.95,Restaurant,With Others,With others,24/04/2026,FALSE
+UNN0048,Palace cinemas,$49.98,Unnecessary,Entertainment,Entertainment,24/04/2026,FALSE
+RES0050,Mcdonalds,$47.10,Restaurant,With Others,With others,25/04/2026,FALSE
+NEC0029,Apco,$52.64,Necessary,Transport,Fuel,25/04/2026,FALSE
+UNN0049,Iga,$21.66,Unnecessary,Shopping,Food,25/04/2026,FALSE
+UNN0050,Palace cinemas,$8.12,Unnecessary,Shopping,Food,25/04/2026,FALSE
+GRO0083,Coles,$31.80,Groceries,For home,For home,26/04/2026,FALSE
+GRO0084,Woolworths,$0.92,Groceries,For home,For home,27/04/2026,FALSE
+RES0051,Kfc,$4.95,Restaurant,Alone,Alone,27/04/2026,FALSE
+GRO0085,Coles,$4.50,Groceries,For home,For home,27/04/2026,FALSE
+GRO0086,Woolworths,$1.26,Groceries,For home,For home,30/04/2026,FALSE
+GRO0087,Aldi,$4.89,Groceries,For home,For home,30/04/2026,FALSE
+GRO0088,Coles,$30.05,Groceries,For home,For home,30/04/2026,FALSE
+UNN0051,Baker delight,$5.88,Unnecessary,Shopping,Food,30/04/2026,FALSE
+TEM0007,Anytime fitness,$164.60,Temporary,Subscriptions,Subscription,01/05/2026,FALSE
+NEC0030,Apco,$36.96,Necessary,Transport,Fuel,01/05/2026,FALSE
+TEM0008,Spotify,$15.99,Temporary,Subscriptions,Subscription,02/05/2026,FALSE
+GRO0089,Coles,$8.00,Groceries,For home,For home,02/05/2026,FALSE
+UNN0052,Melbourne museum,$30.00,Unnecessary,Transport,Parking,02/05/2026,FALSE
+RES0052,Mcdonalds,$34.25,Restaurant,With Others,With others,02/05/2026,FALSE
+GRO0090,Woolworths,$45.35,Groceries,For home,For home,03/05/2026,FALSE
+NEC0031,Jolene,$695.50,Necessary,Bills/utilities,Rent,03/05/2026,FALSE
+GRO0091,Aldi,$0.47,Groceries,For home,For home,05/05/2026,FALSE
+GRO0092,Woolworths,$0.64,Groceries,For home,For home,05/05/2026,FALSE
+RES0053,Kfc,$4.95,Restaurant,Alone,Alone,08/05/2026,FALSE
+GRO0093,Coles,$0.52,Groceries,For home,For home,09/05/2026,FALSE
+GRO0094,Coles,$29.15,Groceries,For home,For home,04/05/2026,FALSE
+UNN0053,Openai,$13.00,Unnecessary,Subscriptions,Subscription,04/05/2026,FALSE
+RES0054,Harajuku crepes,$8.94,Restaurant,With Others,With others,06/05/2026,FALSE
+NEC0032,Origin,$68.00,Necessary,Bills/utilities,Bills,07/05/2026,FALSE
+GRO0095,Coles,$17.95,Groceries,For home,For home,07/05/2026,FALSE
+GRO0096,Indian srilankan groceries,$7.50,Groceries,For home,For home,07/05/2026,FALSE
+NEC0033,Oom energy,$49.32,Necessary,Transport,Fuel,08/05/2026,FALSE
+RES0055,Burgertory,$23.39,Restaurant,Alone,Alone,08/05/2026,FALSE
+GRO0097,Chemist warehouse,$16.78,Groceries,For home,For home,08/05/2026,FALSE
+UNN0054,Bread top,$4.40,Unnecessary,Shopping,Food,08/05/2026,FALSE
+RES0056,Walkers,$73.91,Restaurant,With Others,With others,09/05/2026,FALSE
+RES0057,Ajisen ramen,$85.39,Restaurant,With Others,With others,09/05/2026,FALSE
+UNN0055,Coles,$15.00,Unnecessary,Gifts,Gifts,10/05/2026,FALSE
+UNN0056,Aldi,$10.00,Unnecessary,Gifts,Gifts,10/05/2026,FALSE
+RES0058,Kfc,$58.00,Restaurant,With Others,With others,11/05/2026,FALSE
+GRO0098,Coles,$35.96,Groceries,For home,For home,13/05/2026,FALSE
+RES0059,Kfc,$4.95,Restaurant,Alone,Alone,08/05/2026,FALSE
+RES0060,Mcdonalds,$16.15,Restaurant,Alone,Alone,15/05/2026,FALSE
+UNN0057,Office works,$1.41,Unnecessary,Entertainment,Games,15/05/2026,FALSE
+NEC0034,Apco,$54.96,Necessary,Transport,Fuel,15/05/2026,FALSE
+GRO0099,Coles,$53.06,Groceries,For home,For home,16/05/2026,FALSE
+RES0061,Coffee qtr,$21.15,Restaurant,With Others,With others,16/05/2026,FALSE
+UNN0058,Sugar station,$10.00,Unnecessary,Shopping,Food,16/05/2026,FALSE
+GRO0100,Aldi,$6.48,Groceries,For home,For home,16/05/2026,FALSE
+GRO0101,Aldi,$21.24,Groceries,For home,For home,17/05/2026,FALSE
+UNN0059,Bread top,$3.30,Unnecessary,Shopping,Food,18/05/2026,FALSE
+RES0062,Sandwich chefs,$9.14,Restaurant,Alone,Alone,18/05/2026,FALSE
+GRO0102,Coles,$8.64,Groceries,For home,For home,18/05/2026,FALSE
+GRO0103,Woolworths,$15.50,Groceries,For home,For home,18/05/2026,FALSE
+UNN0060,Any time fitness,$838.00,Unnecessary,Subscriptions,Subscription cancelation,18/05/2026,FALSE
+GRO0104,Supercheap auto,$15.99,Groceries,For home,For home,19/05/2026,FALSE
+GRO0105,Coles,$14.68,Groceries,For home,For home,20/05/2026,FALSE
+UNN0061,Timezone,$50.00,Unnecessary,Entertainment,Games,21/05/2026,FALSE
+GRO0106,Coles,$17.07,Groceries,For home,For home,21/05/2026,FALSE
+RES0063,Hungry jacks,$15.40,Restaurant,Alone,Alone,22/05/2026,FALSE
+RES0064,Mcdonalds,$13.85,Restaurant,Alone,Alone,22/05/2026,FALSE
+NEC0035,Apco,$39.29,Necessary,Transport,Fuel,22/05/2026,FALSE
+RES0065,Sushi hub,$7.30,Restaurant,With Others,With others,23/05/2026,FALSE
+RES0066,Gloria jeans coffee,$7.37,Restaurant,With Others,With others,23/05/2026,FALSE
+GRO0107,Woolworths,$68.88,Groceries,For home,For home,24/05/2026,FALSE
+GRO0108,Aldi,$89.99,Groceries,For home,For home,26/05/2026,FALSE
+GRO0109,Coles,$71.60,Groceries,For home,For home,26/05/2026,FALSE
+UNN0062,Crunchy roll,$14.99,Unnecessary,Subscriptions,Subscription,28/05/2026,FALSE
+UNN0063,Bread top,$5.20,Unnecessary,Shopping,Food,28/05/2026,FALSE
+NEC0036,Apco,$23.15,Necessary,Transport,Fuel,29/05/2026,FALSE
+RES0067,Mcdonalds,$28.20,Restaurant,With Others,With others,29/05/2026,FALSE
+UNN0064,Kmart ,$6.50,Unnecessary,Shopping,Shopping,30/05/2026,FALSE
+GRO0110,Coles,$4.00,Groceries,For home,For home,30/05/2026,FALSE
+RES0068,Kfc,$13.40,Restaurant,With Others,With others,30/05/2026,FALSE
+GRO0111,Coles,$37.84,Groceries,For home,For home,31/05/2026,FALSE
+GRO0112,Coles,$35.32,Groceries,For home,For home,01/06/2026,FALSE
+TEM0009,Spotify,$15.99,Temporary,Subscriptions,Subscription,02/06/2026,FALSE
+GRO0113,Too good too go,$9.99,Groceries,For home,For home,03/06/2026,FALSE
+UNN0065,The cheese cake shop,$47.95,Unnecessary,Shopping,Food,03/06/2026,FALSE
+NEC0037,Vicroads,$94.45,Necessary,Bills/utilities,Bills,03/06/2026,FALSE
+NEC0038,Jolene,$695.50,Necessary,Bills/utilities,Rent,03/06/2026,FALSE
+UNN0066,Chat gpt,$13.00,Unnecessary,Subscriptions,Subscription,04/06/2026,FALSE
+GRO0114,Coles,$7.00,Groceries,For home,For home,04/06/2026,FALSE
+RES0069,Hungry jacks,$15.40,Restaurant,Alone,Alone,04/06/2026,FALSE
+RES0070,Hungry jacks,$15.40,Restaurant,Alone,Alone,05/06/2026,FALSE
+GRO0115,Coles,$23.36,Groceries,For home,For home,05/06/2026,FALSE
+NEC0039,Origin,$68.00,Necessary,Bills/utilities,Bills,05/06/2026,FALSE
+RES0071,Mcdonalds,$17.80,Restaurant,Alone,Alone,12/06/2026,FALSE
+GRO0116,Woolworths,$10.50,Groceries,For home,For home,09/06/2026,FALSE
+GRO0117,Coles,$11.36,Groceries,For home,For home,09/06/2026,FALSE
+NEC0040,Myki,$20.00,Necessary,Transport,Transport,06/06/2026,FALSE
+UNN0067,Extertise events,$104.04,Unnecessary,Entertainment,Entertainment,06/06/2026,FALSE
+GRO0118,Coles,$13.40,Groceries,For home,For home,06/06/2026,FALSE
+UNN0068,Pluto minis,$29.00,Unnecessary,Shopping,Shopping,07/06/2026,FALSE
+UNN0069,Fruit bowl dice,$18.29,Unnecessary,Shopping,Shopping,07/06/2026,FALSE
+UNN0070,Get catty,$70.00,Unnecessary,Shopping,Shopping,07/06/2026,FALSE
+NEC0041,Apco,$60.15,Necessary,Transport,Fuel,07/06/2026,FALSE
+GRO0119,Coles,$16.50,Groceries,For home,For home,08/06/2026,FALSE
+RES0072,Hungry jacks,$16.90,Restaurant,Alone,Alone,09/06/2026,FALSE
+GRO0120,Coles,$40.15,Groceries,For home,For home,09/06/2026,FALSE
+GRO0121,Woolworths,$10.09,Groceries,For home,For home,10/06/2026,FALSE
+GRO0122,Coles,$30.09,Groceries,For home,For home,10/06/2026,FALSE
+GRO0123,Coles,$3.75,Groceries,For home,For home,11/06/2026,FALSE
+GRO0124,Coles,$3.75,Groceries,For home,For home,12/06/2026,FALSE
+NEC0042,Oom energy,$27.84,Necessary,Transport,Fuel,12/06/2026,FALSE
+RES0073,Mcdonalds,$17.80,Restaurant,Alone,Alone,12/06/2026,FALSE
+GRO0125,Woolworths,$17.25,Groceries,For home,For home,12/06/2026,FALSE
+GRO0126,Coles,$48.35,Groceries,For home,For home,14/06/2026,FALSE
+UNN0071,Walkers,$5.23,Unnecessary,Shopping,Food,14/06/2026,FALSE
+RES0074,Hungry jacks,$17.40,Restaurant,Alone,Alone,15/06/2026,FALSE
+GRO0127,Coles,$21.45,Groceries,For home,For home,15/06/2026,FALSE
+GRO0128,Coles,$3.55,Groceries,For home,For home,16/06/2026,FALSE
+NEC0043,Crime check australia,$49.00,Necessary,Bills/utilities,Background check,16/06/2026,FALSE
+UNN0072,Astron fuels,$4.53,Unnecessary,Shopping,Food,17/06/2026,FALSE
+GRO0129,Coles,$27.80,Groceries,For home,For home,17/06/2026,FALSE
+UNN0073,Liquorland,$53.00,Unnecessary,Shopping,Food,17/06/2026,FALSE
+UNN0074,Tk maxx,$4.99,Unnecessary,Shopping,Shopping,18/06/2026,FALSE
+UNN0075,Liquorland,$17.00,Unnecessary,Shopping,Food,18/06/2026,FALSE
+UNN0076,Leah,$24.00,Unnecessary,Shopping,Burgers,19/06/2026,FALSE
+NEC0044,Astron fuels,$41.94,Necessary,Transport,Fuel,22/06/2026,FALSE
+UNN0077,Office works,$6.00,Unnecessary,Education,Printing,22/06/2026,FALSE
+RES0075,Yoyogi,$25.25,Restaurant,With Others,With others,22/06/2026,FALSE
+UNN0078,Leah,$27.50,Unnecessary,Shopping,Food,22/06/2026,FALSE
+GRO0130,Woolworths,$44.25,Groceries,For home,For home,22/06/2026,FALSE
+UNN0079,Mind games,$59.00,Unnecessary,Entertainment,Games,23/06/2026,FALSE
+UNN0080,Apple,$9.99,Unnecessary,Entertainment,Games,24/06/2026,FALSE
+GRO0131,Too good to go,$14.98,Groceries,For home,For home,25/06/2026,FALSE
+GRO0132,Coles,$23.30,Groceries,For home,For home,25/06/2026,FALSE
+NEC0045,Origin,$501.06,Necessary,Bills/utilities,"Bills, electricity",26/06/2026,FALSE
+UNN0081,Office works,$13.00,Unnecessary,Education,Printing,27/06/2026,FALSE
+UNN0082,Crunchy roll,$14.99,Unnecessary,Subscriptions,Subscription,28/06/2026,FALSE
+GRO0133,Coles,$26.75,Groceries,For home,For home,28/06/2026,FALSE
+GRO0134,Coles,$29.90,Groceries,For home,For home,30/06/2026,FALSE
+UNN0083,King of clippers,$45.23,Unnecessary,Shopping,Hair cut,01/07/2026,FALSE
+UNN0084,Coles,$4.45,Unnecessary,Shopping,Food,01/07/2026,FALSE
+RES0076,The toff,$40.56,Restaurant,With Others,With others,01/07/2026,FALSE
+TEM0010,Spotify,$15.99,Temporary,Subscriptions,Subscription,02/07/2026,FALSE
+TEM0011,Fedex,$473.95,Temporary,Transport,International toll,03/07/2026,FALSE
+TEM0012,Chatgpt,$13.00,Temporary,Subscriptions,Subscription,04/07/2026,FALSE
+NEC0046,Jolene,$695.50,Necessary,Bills/utilities,Rent,04/07/2026,FALSE
+GRO0135,Woolworths,$30.76,Groceries,For home,For home,04/07/2026,FALSE
+GRO0136,Chemist warehouse,$41.98,Groceries,Medical,Flu shot,06/07/2026,FALSE
+RES0077,Sandwich chefs,$39.38,Restaurant,With Others,With others,06/07/2026,FALSE
+NEC0047,Origin,$93.00,Necessary,Bills/utilities,Bills,07/07/2026,FALSE
+GRO0137,Aldi,$4.88,Groceries,For home,For home,08/07/2026,FALSE
+GRO0138,Woolworths,$32.87,Groceries,For home,For home,08/07/2026,FALSE
+GRO0139,Aldi,$3.49,Groceries,For home,For home,04/07/2026,FALSE
+GRO0140,Coles,$18.70,Groceries,For home,For home,07/07/2026,FALSE
+GRO0141,Coles,$10.25,Groceries,For home,For home,13/07/2026,FALSE
+NEC0048,Metro petroleum,$44.32,Necessary,Transport,Fuel,10/07/2026,FALSE
+GRO0142,Coles,$40.05,Groceries,For home,For home,10/07/2026,FALSE
+RES0078,Hungry jacks,$26.80,Restaurant,With Others,With others,11/07/2026,FALSE
+GRO0143,Foodle asian grocery,$5.18,Groceries,For home,For home,13/07/2026,FALSE
+TEM0013,Mcafee,$294.90,Temporary,Subscriptions,Subscription,14/07/2026,FALSE
+GRO0144,Coles,$27.66,Groceries,For home,For home,15/07/2026,FALSE
+GRO0145,Coles,$35.55,Groceries,For home,For home,16/07/2026,FALSE
+GRO0146,Coles,$13.80,Groceries,For home,For home,17/07/2026,FALSE
+UNN0085,Palace cinemas,$49.98,Unnecessary,Entertainment,Entertainment,17/07/2026,FALSE
+RES0079,Kfc,$18.35,Restaurant,With Others,With others,17/07/2026,FALSE
+GRO0147,Coles,$7.50,Groceries,For home,For home,21/07/2026,FALSE
+NEC0049,Metro petroleum,$49.35,Necessary,Transport,Fuel,22/07/2026,FALSE
+RES0080,Mcdonalds,$15.45,Restaurant,Alone,Alone,24/07/2026,FALSE
+RES0081,Ferduson plarre bakehouse,$16.55,Restaurant,With Others,With others,25/07/2026,FALSE
+GRO0148,Coles,$10.00,Groceries,For home,For home,26/07/2026,FALSE
+GRO0149,Aldi,$24.65,Groceries,For home,For home,27/07/2026,FALSE
+GRO0150,Coles,$18.15,Groceries,For home,For home,27/07/2026,FALSE
+UNN0086,Bp,$4.95,Unnecessary,Shopping,Food,28/07/2026,FALSE
+UNN0087,Crunchy roll,$14.99,Unnecessary,Subscriptions,Subscription,28/07/2026,FALSE
+GRO0151,Coles,$55.64,Groceries,For home,For home,31/07/2026,FALSE
+RES0082,Hungry jacks,$15.70,Restaurant,Alone,Alone,31/07/2026,FALSE
+NEC0050,Apco,$39.36,Necessary,Transport,Fuel,31/07/2026,FALSE
+RES0083,Mcdonalds,$14.75,Restaurant,With Others,With others,31/07/2026,FALSE
+RES0084,Kfc,$14.40,Restaurant,With Others,With others,01/08/2026,FALSE
+RES0085,Leah,$3.00,Restaurant,For others,For f&c,01/08/2026,FALSE
+TEM0014,Spotify,$15.99,Temporary,Subscriptions,Subscriptions,02/08/2026,FALSE
+NEC0051,Super cheap auto,$223.99,Necessary,Shopping,Repair,02/08/2026,FALSE
+TEM0015,Openai,$13.00,Temporary,Subscriptions,Subscription,04/08/2026,FALSE
+NEC0052,Origin,$99.00,Necessary,Bills/utilities,Bills,06/08/2026,FALSE
+RES0086,Mcdonalds,$13.15,Restaurant,With Others,With others,07/08/2026,FALSE
+GRO0152,Coles,$20.30,Groceries,For home,For home,07/08/2026,FALSE
+GRO0153,Woolworths,$30.80,Groceries,For home,For home,07/08/2026,FALSE
+GRO0154,Coles,$14.68,Groceries,For home,For home,09/08/2026,FALSE
+RES0087,Mcdonalds,$16.45,Restaurant,Alone,Alone,07/08/2026,FALSE
+NEC0053,Apco,$60.52,Necessary,Transport,Fuel,07/08/2026,FALSE
+RES0088,Sandwich chefs,$7.61,Restaurant,With Others,With others,09/08/2026,FALSE
+GRO0155,Coles,$4.53,Groceries,For home,For home,10/08/2026,FALSE
+RES0089,Ferguson plarre bakehouse,$22.24,Restaurant,With Others,With others,12/08/2026,FALSE
+GRO0156,Coles,$28.07,Groceries,For home,For home,13/08/2026,FALSE
+GRO0157,Too good to go,$9.99,Groceries,For home,For home,13/08/2026,FALSE
+GRO0158,Woolworths,$3.95,Groceries,For home,For home,13/08/2026,FALSE
+RES0090,Kfc,$17.95,Restaurant,Alone,Alone,14/08/2026,FALSE
+NEC0054,Apco,$29.96,Necessary,Transport,Fuel,14/08/2026,FALSE
+GRO0159,Woolworths,$4.15,Groceries,For home,For home,16/08/2026,FALSE
+UNN0088,Ferguson plarre bakehouse,$5.57,Unnecessary,Shopping,Food,16/08/2026,FALSE
+UNN0089,Hair to hair,$35.67,Unnecessary,Shopping,Haircut,17/08/2026,FALSE
+RES0091,Nene chicken,$47.11,Restaurant,With Others,With others,17/08/2026,FALSE
+GRO0160,Coles,$27.00,Groceries,For home,For home,17/08/2026,FALSE
+GRO0161,Coles,$25.10,Groceries,For home,For home,21/08/2026,FALSE
+GRO0162,Aldi,$4.98,Groceries,For home,For home,21/08/2026,FALSE
+RES0092,Mcdonlads,$14.60,Restaurant,With Others,With others,21/08/2026,FALSE
+UNN0090,Officeworks,$28.00,Unnecessary,Shopping,Usb for claim,21/08/2026,FALSE
+NEC0055,Apco,$51.24,Necessary,Transport,Fuel,21/08/2026,FALSE
+UNN0091,Dan murphy's,$14.95,Unnecessary,Gifts,Gift,21/08/2026,FALSE
+RES0093,Westgarth fish and chips,$29.46,Restaurant,With Others,With others,22/08/2026,FALSE
+RES0094,Ferguson plarre bakehouse,$13.16,Restaurant,Alone,Alone,23/08/2026,FALSE
+RES0095,Mcalace,$30.25,Restaurant,With Others,With others,24/08/2026,FALSE
+RES0096,Ikea,$38.50,Restaurant,With Others,With others,25/08/2026,FALSE
+GRO0163,Coles,$14.50,Groceries,For home,For home,26/08/2026,FALSE
+GRO0164,Jolene,$26.00,Groceries,For home,Refund for dish powder,27/08/2026,FALSE
+NEC0056,Astron,$40.94,Necessary,Transport,Fuel,28/08/2026,FALSE
+RES0097,Pancake parlour,$62.24,Restaurant,With Others,With others,28/08/2026,FALSE
+UNN0092,Crunchy roll,$14.99,Unnecessary,Subscriptions,Subscription,28/08/2026,FALSE
+UNN0093,Eb games,$29.00,Unnecessary,Entertainment,Games,28/08/2026,FALSE
+RES0098,Kfc,$4.95,Restaurant,Alone,Alone,28/08/2026,FALSE
+RES0099,Mcdonalds,$7.95,Restaurant,With Others,With others,28/08/2026,FALSE
+RES0100,Ferguson plarre bakehouse,$14.27,Restaurant,Alone,Alone,30/08/2026,FALSE
+GRO0165,Woolworths,$52.50,Groceries,For home,For home,30/08/2026,FALSE
+GRO0166,Too good to go,$7.99,Groceries,For home,From home,31/08/2026,FALSE
+TEM0016,Spotify,$15.99,Temporary,Subscriptions,Subscription,02/09/2026,FALSE
+GRO0167,Coles,$7.70,Groceries,For home,For home,02/09/2026,FALSE
+TEM0017,Myki,$11.00,Temporary,Transport,Transport,02/09/2026,FALSE
+UNN0094,Archie brothers,$58.42,Unnecessary,Entertainment,"Playback96, games",02/09/2026,FALSE
+TEM0018,Myki,$20.00,Temporary,Transport,Transport,03/09/2026,FALSE
+UNN0095,Pantre,$18.17,Unnecessary,Gifts,Gift,03/09/2026,FALSE
+TEM0019,Openai,$13.00,Temporary,Subscriptions,Subscription,04/09/2026,FALSE
+GRO0168,Coles,$23.30,Groceries,For home,For home,04/09/2026,FALSE
+RES0101,Hungry jacks,$15.50,Restaurant,Alone,Alone,04/09/2026,FALSE
+NEC0057,Origin,$99.00,Necessary,Bills/utilities,Bills,04/09/2026,FALSE
+RES0102,Kfc,$24.40,Restaurant,With Others,With others,04/09/2026,FALSE
+UNN0096,Palace cinemas,$49.98,Unnecessary,Entertainment,Entertainment,05/09/2026,FALSE
+UNN0097,Ritches,$11.00,Unnecessary,Shopping,Food,05/09/2026,FALSE
+NEC0058,Jolene,$92.00,Necessary,Bills/utilities,Rent,06/09/2026,FALSE
+RES0103,Ferguson plarre bakehouse,$28.54,Restaurant,With Others,With others,06/09/2026,FALSE
+GRO0169,Woolworths,$22.65,Groceries,For home,For home,07/09/2026,FALSE
+GRO0170,Coles,$12.50,Groceries,For home,For home,09/09/2026,FALSE
+NEC0059,Astron fuels,$49.50,Necessary,Transport,Fuel,09/09/2026,FALSE
+RES0104,Kfc,$46.35,Restaurant,With Others,With others,09/09/2026,FALSE
+GRO0171,Coles,$11.40,Groceries,For home,For home,09/09/2026,FALSE
+RES0105,Kick ass burgers,$24.50,Restaurant,Alone,Alone,11/09/2026,FALSE
+UNN0098,B.lucky,$15.42,Unnecessary,Shopping,Food,12/09/2026,FALSE
+GRO0172,Woolworths,$7.95,Groceries,For home,For home,13/09/2026,FALSE
+GRO0173,woolworths,$37.89,Groceries,For home,For home,13/09/2026,FALSE
+GRO0174,ALDI,$20.77,Groceries,For home,For home,15/09/2026,FALSE
+UNN0099,Toast Masters,$70.00,Unnecessary,Entertainment,entertainment,15/09/2026,FALSE
+RES0106,O-bento,$13.42,Restaurant,Alone,Alone,16/09/2026,FALSE
+NEC0060,Oom Energy,$59.72,Necessary,Transport,Fuel,18/09/2026,FALSE
+RES0107,Ferguson Plarre Bakehouse,$5.50,Restaurant,Alone,Alone,22/09/2026,FALSE
+GRO0175,Woolworths,$23.05,Groceries,For home,For home,20/09/2026,FALSE
+NEC0061,Jolene,$42.24,Necessary,Bills/utilities,Water bill,21/09/2026,FALSE
+GRO0176,Coles,$16.45,Groceries,For home,For home,22/09/2026,FALSE
+RES0108,McDonalds,$16.45,Restaurant,Alone,Alone,18/09/2026,FALSE
+GRO0177,Chemist Warehouse,$4.49,Groceries,For home,For Home,18/09/2026,FALSE
+GRO0178,Woolworths,$24.50,Groceries,For home,For home,18/09/2026,FALSE
+GRO0179,Coles,$14.50,Groceries,For home,For home,18/09/2026,FALSE
+GRO0180,Chemist Warehouse,$23.98,Groceries,For home,For home,18/09/2026,FALSE
+GRO0181,Coles,$3.40,Groceries,For home,For home,23/09/2026,FALSE
+TEM0020,Myki,$20.00,Temporary,Transport,Transport,23/09/2026,FALSE
+UNN0100,Australia Post,$12.00,Unnecessary,Education,Printing,24/09/2026,FALSE
+UNN0101,Australian vending company,$4.80,Unnecessary,Shopping,food,24/09/2026,FALSE
+RES0109,Betty's burgers,$57.00,Restaurant,With Others,With others,24/09/2026,FALSE
+RES0110,KFC,$17.45,Restaurant,Alone,Alone,25/09/2026,FALSE
+TEM0021,Crunchy Roll,$14.99,Temporary,Subscriptions,Subscription,28/09/2026,FALSE
+GRO0182,ALDI,$27.25,Groceries,For home,For home,28/09/2026,FALSE
+NEC0062,Origin,$671.30,Necessary,Bills/utilities,Electricity bill,28/09/2026,FALSE
+GRO0183,coles,$8.00,Groceries,For home,for home,29/09/2026,FALSE
+GRO0184,coles,$16.60,Groceries,For home,for home,30/09/2026,FALSE
+RES0111,incredibowl,$27.18,Restaurant,With Others,with others,30/09/2026,FALSE
+NEC0063,origin,$22.38,Necessary,Bills/utilities,electricity bill make up,01/10/2026,FALSE
+TEM0022,spotify,$15.99,Temporary,Subscriptions,subscription,02/10/2026,FALSE
+GRO0185,coles,$10.40,Groceries,For home,for home,02/10/2026,FALSE
+NEC0064,APCO,$60.46,Necessary,Transport,Fuel,03/10/2026,FALSE
+TEM0023,Open AI,$13.00,Temporary,Subscriptions,subscription,04/10/2026,FALSE
+RES0112,Ferguson Plarre Bakehouses,$4.15,Restaurant,Alone,Alone,04/10/2026,FALSE
+GRO0186,Woolworths,$17.70,Groceries,For home,For home,04/10/2026,FALSE
+UNN0102,Palace Cinemas,$20.98,Unnecessary,Entertainment,entertainment,05/10/2026,FALSE
+NEC0065,Jolene,$707.50,Necessary,Bills/utilities,Rent Oct,05/10/2026,FALSE
+UNN0103,Ritches Supa IGA,$18.14,Unnecessary,Shopping,Food,05/10/2026,FALSE 
+GRO0187,ALDI,$3.49,Groceries,For home,For home,06/10/2026,FALSE 
+GRO0188,Coles,$11.50,Groceries,For home,For home,06/10/2026,FALSE 
+RES0113,McDonalds,$3.15,Restaurant,Alone,Alone,07/10/2026,FALSE 
+NEC0066,Real People,$399.00,Necessary,Shopping,expense for photoshoot,07/10/2026,FALSE
+RES0114,tower sushi,$4.00,Restaurant,Alone,Alone,07/10/2026,FALSE 
+NEC0067,Myki,$20.00,Necessary,Transport,Transport,07/10/2026,FALSE 
+NEC0068,Origin,$99.00,Necessary,Bills/utilities,internet bill,07/10/2026,FALSE 
+RES0115,KFC,$18.95,Restaurant,Alone,Alone,08/10/2026,FALSE 
+RES0116,Nene chicken,$25.85,Restaurant,With Others,With others,08/10/2026,FALSE 
+GRO0189,Woolworths,$69.95,Groceries,For home,For home,09/10/2026,FALSE
+UNN0104,Liquorland,$15.00,Unnecessary,Gifts,Gift,10/10/2026,FALSE
+TEM0024,Myki,$20.00,Temporary,Transport,Transport,10/10/2026,FALSE
+RES0117,Domino's,$16.70,Restaurant,With Others,With others,10/10/2026,FALSE
+RES0118,McDonlads,$18.75,Restaurant,With Others,With others,11/10/2026,FALSE
+GRO0190,Coles,$9.65,Groceries,For home,For home,12/10/2026,FALSE
+GRO0191,Too good to go,10.0,Groceries,For home,For home,13/10/2026,FALSE
+GRO0192,Too good to go,4.99,Groceries,For home,For home,13/10/2026,FALSE
+RES0119,Laksa Hut,20.0,Restaurant,With Others,With others,13/10/2026,FALSE
+NEC0069,coles,20.0,Necessary,For home,at home,14/10/2026,FALSE

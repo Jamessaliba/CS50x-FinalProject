@@ -1,0 +1,207 @@
+from PyQt6.QtWidgets import (
+    QApplication, QMainWindow, QWidget, QLabel, QGridLayout,
+    QComboBox, QTableWidget, QTableWidgetItem, QHeaderView, QPushButton,QDateEdit, QDoubleSpinBox, QLineEdit,
+      QVBoxLayout, QDialog, QDialogButtonBox, QHBoxLayout,
+)
+import calendar
+import datetime
+import pandas as pd
+from PyQt6.QtCore import QSize, Qt, QDate
+import Spreadsheet_operator as sheet
+
+
+class BudgetWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        contanier = QHBoxLayout()
+        layout1 = QVBoxLayout()
+        layout2 = QVBoxLayout()
+        self.expenses = sheet.get_expense()
+        self.revenues = sheet.get_revenue()
+        self.expense_df = pd.read_csv('budget_expenses.csv')
+        self.revenue_df = pd.read_csv('budget_revenue.csv')
+
+        # left side entry layout
+        self.budget_table = QTableWidget(8, 2)
+        self.budget_table.verticalHeader().setVisible(False)
+        self.budget_table.setHorizontalHeaderLabels(["monthly budget:", ""])
+        self.budget_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.budget_table.setItem(0, 0, QTableWidgetItem("net monthly allowance:"))
+        self.budget_table.setItem(1, 0, QTableWidgetItem("max daily spending:"))
+        self.budget_table.setItem(2, 0, QTableWidgetItem("spent so far:"))
+        self.budget_table.setItem(3, 0, QTableWidgetItem("remaining days (including today):"))
+        self.budget_table.setItem(4, 0, QTableWidgetItem("number of days this month:"))
+        self.budget_table.setItem(5, 0, QTableWidgetItem("remaining allowance:"))
+        self.budget_table.setItem(6, 0, QTableWidgetItem("actually allowed daily spending:"))
+        self.budget_table.setItem(7, 0, QTableWidgetItem("current rate of spending per day:"))
+        update_budget_button = QPushButton("Update Budget")
+        update_budget_button.pressed.connect(self.update_page)
+        # few couple of days recommended spending
+
+        self.calander_budget_table = QTableWidget(3,3)
+        self.calander_budget_table.verticalHeader().setVisible(False)
+        self.calander_budget_table.setHorizontalHeaderLabels(["Date", "Amount", "difference"])
+        self.calander_budget_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+
+        layout1.addWidget(self.budget_table)
+        layout1.addWidget(update_budget_button)
+        layout1.addWidget(self.calander_budget_table)
+
+        # right side entry layout
+        # expenses
+        expense_label = QLabel("Expenses")
+        self.expenses_table = QTableWidget(len(self.expense_df), 3)
+        self.expenses_table.setHorizontalHeaderLabels(["Item", "Amount", ""])
+        self.expenses_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.add_expense_button = QPushButton("add expense")
+        self.add_expense_button.pressed.connect(lambda: self.add_row("expense"))
+
+        #revenues
+        revenue_label = QLabel("Revenues")
+        self.revenues_table = QTableWidget(len(self.revenue_df), 3)
+        self.revenues_table.setHorizontalHeaderLabels(["Item", "Amount", ""])
+        self.revenues_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.add_revenue_button = QPushButton("add revenues")
+        self.add_revenue_button.pressed.connect(lambda: self.add_row("revenue"))
+
+        layout2.addWidget(expense_label)
+        layout2.addWidget(self.expenses_table)
+        layout2.addWidget(self.add_expense_button)
+        layout2.addWidget(revenue_label)
+        layout2.addWidget(self.revenues_table)
+        layout2.addWidget(self.add_revenue_button)
+
+        self.update_budget_table()
+        self.generate_right_table()
+        self.update_calander_table()
+
+        # Add the two main sections to the horizontal container
+        contanier.addLayout(layout1, 1)
+        contanier.addLayout(layout2, 1)
+        self.setLayout(contanier)
+
+    def update_page(self):
+        self.update_files()
+        self.update_budget_table()
+        self.generate_right_table()
+        self.update_calander_table()
+
+    def update_budget_table(self):
+        self.total_expenses = self.expense_df['amount'].sum()
+        self.total_revenue = self.revenue_df['amount'].sum()
+        self.monthly_allowence = self.total_revenue - self.total_expenses
+        current_date = datetime.date.today()
+        today = str(current_date).split('-')[2]
+        _, num_days_in_month = calendar.monthrange(current_date.year, current_date.month)
+        self.spent_this_month = sheet.spent_month('09')
+        remaining_days = int(num_days_in_month) - int(today) +1
+        try:
+            daily_spending = (self.monthly_allowence - self.spent_this_month)/remaining_days
+        except ZeroDivisionError:
+            daily_spending = self.monthly_allowence - self.spent_this_month
+        self.budget_table.setItem(0, 1, QTableWidgetItem(f"{self.monthly_allowence:,.2f}"))
+        self.budget_table.setItem(1, 1, QTableWidgetItem(f"{self.monthly_allowence/30.4:,.2f}"))
+        self.budget_table.setItem(2, 1, QTableWidgetItem(f"{self.spent_this_month:,.2f}"))
+        self.budget_table.setItem(3, 1, QTableWidgetItem(f"{num_days_in_month}"))
+        self.budget_table.setItem(4, 1, QTableWidgetItem(f"{remaining_days}"))
+        self.budget_table.setItem(5, 1, QTableWidgetItem(f"{self.monthly_allowence - self.spent_this_month:,.2f}"))
+        self.budget_table.setItem(6, 1, QTableWidgetItem(f"{daily_spending:,.2f}"))
+        self.budget_table.setItem(7, 1, QTableWidgetItem(f"{self.spent_this_month/(int(today)):.2f}"))
+
+    def update_calander_table(self):
+        self.calander_budget_table.setRowCount(0)  # Clear existing rows
+        current_date = datetime.date.today()
+        _, num_days_in_month = calendar.monthrange(current_date.year, current_date.month)
+        calander_array = []
+        for day in range(1, num_days_in_month + 1):
+            date = day
+            amount = (self.monthly_allowence - self.spent_this_month) / (num_days_in_month - day + 1)
+            if day == num_days_in_month:
+                difference = 0
+            else:
+                difference = abs((self.monthly_allowence - self.spent_this_month) / (num_days_in_month - day)
+                                -(self.monthly_allowence - self.spent_this_month) / (num_days_in_month - day + 1))
+            calander_array.append((date, amount, f"{difference:,.2f}"))
+
+        for item in range(len(calander_array)):
+            self.calander_budget_table.insertRow(item)
+            self.calander_budget_table.setItem(item, 0, QTableWidgetItem(str(calander_array[item][0])))
+            self.calander_budget_table.setItem(item, 1, QTableWidgetItem(f"{calander_array[item][1]:,.2f}"))
+            self.calander_budget_table.setItem(item, 2, QTableWidgetItem(calander_array[item][2]))
+  
+    def update_files(self):
+        # Update the expense DataFrame with the current data from the expenses_table
+        self.expense_df = pd.DataFrame(columns=["item", "amount"])
+        for row in range(self.expenses_table.rowCount()):
+            item = self.expenses_table.item(row, 0)
+            amount = self.expenses_table.item(row, 1)
+            if item is not None and amount is not None:
+                try:
+                    float_amount = float(amount.text())
+                except ValueError:
+                    continue #create message box to inform user of invalid input
+                self.expense_df = pd.concat([self.expense_df, pd.DataFrame({"item": [item.text()], "amount": [float_amount]})], ignore_index=True)
+
+        # Update the revenue DataFrame with the current data from the revenues_table
+        self.revenue_df = pd.DataFrame(columns=["item", "amount"])
+        for row in range(self.revenues_table.rowCount()):
+            item = self.revenues_table.item(row, 0)
+            amount = self.revenues_table.item(row, 1)
+            if item is not None and amount is not None:
+                try:
+                    float_amount = float(amount.text())
+                except ValueError:
+                    continue #create message box to inform user of invalid input
+                self.revenue_df = pd.concat([self.revenue_df, pd.DataFrame({"item": [item.text()], "amount": [float_amount]})], ignore_index=True)
+
+        # Save the updated DataFrames to CSV files
+        self.expense_df.to_csv('budget_expenses.csv', index=False)
+        self.revenue_df.to_csv('budget_revenue.csv', index=False)
+
+    def generate_right_table(self):
+        for i, row in self.expense_df.iterrows():
+            self.expenses_table.setItem(i, 0, QTableWidgetItem(row["item"]))
+            self.expenses_table.setItem(i, 1, QTableWidgetItem(str(row["amount"])))
+            expense_delete_button = QPushButton("delete")
+            expense_delete_button.clicked.connect(self.delete_row)
+            self.expenses_table.setCellWidget(i, 2, expense_delete_button)
+
+        for i, row in self.revenue_df.iterrows():
+            self.revenues_table.setItem(i, 0, QTableWidgetItem(row["item"]))
+            self.revenues_table.setItem(i, 1, QTableWidgetItem(str(row["amount"])))
+            revenue_delete_button = QPushButton("delete")
+            revenue_delete_button.clicked.connect(self.delete_row)
+            self.revenues_table.setCellWidget(i, 2, revenue_delete_button)
+
+    def add_row(self, worksheet):
+        if worksheet == "expense":
+            row_position = self.expenses_table.rowCount()
+            self.expenses_table.insertRow(row_position)
+            delete_button = QPushButton("delete")
+            delete_button.clicked.connect(self.delete_row)
+            self.expenses_table.setCellWidget(row_position, 2, delete_button)
+
+        elif worksheet == "revenue":
+            row_position = self.revenues_table.rowCount()
+            self.revenues_table.insertRow(row_position)
+            delete_button = QPushButton("delete")
+            delete_button.clicked.connect(self.delete_row)
+            self.revenues_table.setCellWidget(row_position, 2, delete_button)
+
+    def delete_row(self):
+        button = self.sender()
+        if button is None:
+            return
+        # Find which table contains the button
+        for table in [self.expenses_table, self.revenues_table]:
+            for row in range(table.rowCount()):
+                if table.cellWidget(row, 2) == button:
+                    table.removeRow(row)
+                    return
+
+if __name__ == "__main__":
+    app = QApplication([])
+    window = BudgetWindow()
+    window.resize(975,700)
+    window.show()
+    app.exec()

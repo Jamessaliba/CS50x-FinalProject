@@ -1,0 +1,65 @@
+code,entity,amount,category,sub-category,transaction,date,taxable
+CON0001,Mum,$90.59,Contributions,Contributions,"Individual, payback",04/01/2026,False
+CON0002,Jolene,$5.00,Contributions,Contributions,Individual,06/01/2026,False
+INC0001,Centrelink,$913.40,Income,Income,Goverment,13/01/2026,True
+INC0002,Fba care,$896.69,Income,Wage,Work,13/01/2026,True
+INC0003,Fba care,$896.69,Income,Wage,Work,20/01/2026,True
+CON0003,Leah,$11.00,Contributions,For others,"Individual, food",22/01/2026,False
+INC0004,Fba care,$896.69,Income,Wage,Work,27/01/2026,True
+INC0005,Fbs care,$896.69,Income,Wage,Work,03/02/2026,True
+CON0004,Jolene,$188.00,Contributions,Bills/utilities,Split bill for jb,07/02/2026,False
+INC0006,Fba care,$896.69,Income,Wage,Work,10/02/2026,True
+CON0005,Jolene,$75.00,Contributions,Contributions,"Individual, demazzi",14/02/2026,False
+INC0007,Fba care,$896.69,Income,Wage,Work,17/02/2026,True
+CON0006,Jolene,$20.00,Contributions,Entertainment,Individual for game,18/02/2026,False
+INC0008,Fba care,$896.69,Income,Wage,Work,24/02/2026,True
+INC0009,Fba care,$896.69,Income,Wage,Work,03/03/2026,True
+INC0010,Fba care,$896.69,Income,Wage,Work,10/03/2026,True
+INC0011,Fba care,$896.69,Income,Wage,Work,17/03/2026,True
+CON0007,Leah,$129.30,Contributions,Bills/utilities,"Individual, bills",17/03/2026,False
+INC0012,Fba care,$896.69,Income,Wage,Work,24/03/2026,True
+INC0013,Fba care,$896.69,Income,Wage,Work,31/03/2026,True
+CON0008,jolene,$4682.50,Contributions,Bills/utilities,Visa,02/04/2026,False
+CON0009,Leah,$45.20,Contributions,Bills/utilities,Bills,03/04/2026,False
+CON0010,Leah,$6.00,Contributions,Contributions,Food,04/04/2026,False
+CON0011,Leah,$15.95,Contributions,For others,"Individual, kfc",05/04/2026,False
+INC0014,Fba care,$896.69,Income,Wage,Work,07/04/2026,True
+INC0015,Fba care,$896.69,Income,Wage,Work,14/04/2026,True
+INC0016,Fba care,$896.96,Income,Wage,Work,21/04/2026,True
+INC0017,Fba care,$896.69,Income,Wage,Work,28/04/2026,True
+CON0012,Leah,$22.60,Contributions,Bills/utilities,"Individual, bills",03/05/2026,False
+INC0018,Fba care,$896.69,Income,Wage,Work,05/05/2026,True
+INC0019,Fba care,$896.69,Income,Wage,Work,12/05/2026,True
+CON0013,Leah,$15.00,Contributions,Contributions,Food,12/05/2026,False
+INC0020,Fba care,$896.69,Income,Wage,Work,19/05/2026,True
+CON0014,Leah,$11.00,Contributions,Contributions,Groceries,21/05/2026,False
+INC0021,Fba care,$896.69,Income,Wage,Work,26/05/2026,True
+CON0015,Leah,$22.60,Contributions,Bills/utilities,Bills,03/06/2026,False
+INC0022,Fba care,$896.69,Income,Wage,Work,02/06/2026,True
+INC0023,Fba care,$896.69,Income,Wage,Work,09/06/2026,True
+INC0024,Fba care,$896.69,Income,Wage,Work,16/06/2026,True
+INC0025,Fba care,$2200.38,Income,Termination Payment,"Work, exit pay",17/06/2026,False
+CON0016,Jolene,$30.00,Contributions,Transport,Fuel,21/06/2026,False
+CON0017,Jolene,$30.00,Contributions,Entertainment,"Games, mindgames",23/06/2026,False
+CON0018,Vic services,$186.14,Contributions,Refund,Rebate,24/06/2026,False
+CON0019,Jolene,$167.00,Contributions,Bills/utilities,Electricity bills,28/06/2026,False
+CON0020,Leah,$167.02,Contributions,Bills/utilities,Electrity bills,28/06/2026,False
+CON0021,Leah,$22.60,Contributions,Bills/utilities,Wifi bill,02/07/2026,False
+CON0022,Jolene,$50.00,Contributions,Transport,Fuel,19/07/2026,False
+INC0026,Tax return,$2112.23,Income,Refund,Tax return 2026,22/07/2026,False
+CON0023,Leah,$7.00,Contributions,Contributions,Mcdonalds,01/08/2026,False
+CON0024,Leah,$22.60,Contributions,Bills/utilities,Bills,09/08/2026,False
+CON0025,Jolene,$30.00,Contributions,Contributions,Pancake parlour,28/08/2026,False
+CON0026,Coles,$26.00,Contributions,Refund,Refund,01/09/2026,False
+CON0027,Leah,$22.60,Contributions,Bills/utilities,Bills,02/09/2026,False
+CON0028,Jolene,$30.00,Contributions,Transport,Fuel money,08/09/2026,False
+CON0029,Jolene,$30.00,Contributions,Contributions,Kfc,09/09/2026,False
+CON0030,Leah,$22.45,Contributions,Contributions,Kfc,09/09/2026,False
+CON0031,Jolene,$8.00,Contributions,Contributions,Drink from party,12/09/2026,False
+CON0032,Jolene,$223.76,Contributions,Bills/utilities,"Sept Bills, Electricity",23/09/2026,False
+CON0033,Leah,$223.76,Contributions,Bills/utilities,"Sept Bills, Electricity",23/09/2026,False
+CON0034,Jolene,$25.00,Contributions,Contributions,Burgers,24/09/2026,False
+INC0027,jobseeker,$431.82,Income,Income,centerlink payment,01/10/2026,True
+CON0035,leah,$22.60,Contributions,Bills/utilities,bill payment,02/10/2026,False
+CON0036,Steam,$8.79,Contributions,Refund,Refund,06/10/2026,False
+CON0037,jolene,10.0,Contributions,Gifts,money from jolene for something,14/10/2026,FALSE
