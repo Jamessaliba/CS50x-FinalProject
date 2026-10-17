@@ -1,4 +1,4 @@
-from PyQt6.QtCore import QSize, Qt
+from PyQt6.QtCore import QSize, Qt, pyqtSignal
 from PyQt6.QtGui import QAction, QIcon, QKeySequence
 from PyQt6.QtWidgets import (
     QApplication,
@@ -14,11 +14,11 @@ from PyQt6.QtWidgets import (
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
 
-from refactored_report_template import ReportWindow
+from report_page import ReportWindow
 from add_entry import ReportWindow as AddEntryReportWindow
 from budgetor import BudgetWindow
 from view_entrys import ViewEntryWindow
-from statistics import statisticsPage
+from statistics_page import statisticsPage
 
 class loader(QMainWindow):
     def __init__(self):
@@ -83,6 +83,11 @@ class MainWindow(QMainWindow):
         statistics_page = statisticsPage()
         self.stacklayout.addWidget(statistics_page)
 
+        add_entry_page.data_saved.connect(overview_page.get_data)
+        add_entry_page.data_saved.connect(view_entry.get_data)
+        add_entry_page.data_saved.connect(statistics_page.get_data)
+
+        #add actions to tool bar
         toolbar.addAction(button1)
         toolbar.addAction(button2)
         toolbar.addAction(button3)

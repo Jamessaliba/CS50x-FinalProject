@@ -12,7 +12,8 @@ class ReportWindow(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.get_data()
+        self.expense_data = sheet_data.get_expense()
+        self.revenue_data = sheet_data.get_revenue()
         self.current_month = datetime.now().strftime("%m")
         months_to_date = [f"{i:02d}" for i in range(1, int(self.current_month) + 1)]
         self.month = QComboBox()
@@ -65,6 +66,7 @@ class ReportWindow(QWidget):
     def get_data(self):
         self.expense_data = sheet_data.get_expense()
         self.revenue_data = sheet_data.get_revenue()
+        self.update_report(self.month.currentText())
 
     def update_report(self, month):
         self.populate_expense_table(month)

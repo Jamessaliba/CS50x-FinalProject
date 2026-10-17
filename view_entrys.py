@@ -25,8 +25,7 @@ class ViewEntryWindow(QWidget):
                              "Gifts", "Shopping", "Super Contributions", "Donations", "For home", "For others", "Alone,", "With Others", 
                              "Subscriptions", "Income", "Wage", "interest", "Capital Gains", "Shares", "Contributions", "Refund", "Termination Payment", "Other"]
         self.subcatagorys.sort()
-        self.expenses = sheet.get_expense()
-        self.revenues = sheet.get_revenue()
+        self.get_data()
 
         expense_button = QPushButton("Expenses")
         expense_button.setFixedSize(200,25)
@@ -73,6 +72,9 @@ class ViewEntryWindow(QWidget):
 
         self.setLayout(contanier)
 
+    def get_data(self):
+        self.expenses = sheet.get_expense()
+        self.revenues = sheet.get_revenue()
     #helpers
     def search_entries(self):
         array = []

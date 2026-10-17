@@ -2,8 +2,10 @@ from PyQt6.QtWidgets import (
     QApplication, QHBoxLayout, QMainWindow, QVBoxLayout, QWidget, QLabel, QGridLayout,
     QComboBox, QTableWidget, QTableWidgetItem, QHeaderView
 )
+from PyQt6.QtCore import QDate, Qt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
 import Spreadsheet_operator as sheet_data
@@ -11,29 +13,55 @@ import Spreadsheet_operator as sheet_data
 class statisticsPage(QWidget):
     def __init__(self):
         super().__init__()
-        toplayout = QHBoxLayout()
-        bottomlayout = QHBoxLayout()
+        controls_layout =QHBoxLayout()
+        controls_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        top_layout = QHBoxLayout()
+        bottom_layout = QHBoxLayout()
+        self.current_month = datetime.now().strftime("%m")
+        months_to_date = [f"{i:02d}" for i in range(1, int(self.current_month) + 1)]
 
-        self.expense_data = sheet_data.get_expense()
-        self.revenue_data = sheet_data.get_revenue()
+        self.month = QComboBox()
+        self.month.addItems(months_to_date)
+        self.month.setFixedSize(200,25)
+        self.month.setCurrentText(self.current_month)
         self.monthly_expenses = MonthlyExpenses()
         self.totals_amounts = calculate_totals()
         self.spending_per_day = SpentThisMonth()
         self.netratio = netratio()
+        self.month_totals = calculate_month_totals()
 
-        self.monthly_expenses.update_bar_chart_EXP(self.expense_data)
-        self.totals_amounts.update_bar_chart_totals(self.expense_data, self.revenue_data)
-        self.spending_per_day.update_spending_this_month(self.expense_data)
-        self.netratio.update_Piechart(self.expense_data, datetime.now().strftime("%m"))
+        self.get_data()
 
-        toplayout.addWidget(self.monthly_expenses)
-        toplayout.addWidget(self.totals_amounts)
-        bottomlayout.addWidget(self.spending_per_day)
-        bottomlayout.addWidget(self.netratio)
+        controls_layout.addWidget(self.month)
+
+        #should only be affected by the month drop box
+        top_layout.addWidget(self.netratio)
+        top_layout.addWidget(self.spending_per_day)
+        top_layout.addWidget(self.month_totals)
+
+        bottom_layout.addWidget(self.totals_amounts)
+        bottom_layout.addWidget(self.monthly_expenses)
+
         layout = QVBoxLayout()
-        layout.addLayout(toplayout)
-        layout.addLayout(bottomlayout)
+        layout.addLayout(controls_layout)
+        layout.addLayout(top_layout)
+        layout.addLayout(bottom_layout)
         self.setLayout(layout)
+
+        #signals
+        self.month.currentTextChanged.connect(self.update_tables)
+
+    def get_data(self):
+        self.expense_data = sheet_data.get_expense()
+        self.revenue_data = sheet_data.get_revenue()
+        self.update_tables()
+
+    def update_tables(self):
+        self.monthly_expenses.update_plot_chart_EXP(self.expense_data)
+        self.totals_amounts.update_bar_chart_totals(self.expense_data, self.revenue_data)
+        self.spending_per_day.update_spending_this_month(self.expense_data, self.month.currentText())
+        self.netratio.update_Piechart(self.expense_data, self.month.currentText())
+        self.month_totals.update_bar_chart_month_totals(self.expense_data,self.revenue_data,self.month.currentText())
 
 class MonthlyExpenses(FigureCanvasQTAgg):
     def __init__(self):
@@ -42,7 +70,7 @@ class MonthlyExpenses(FigureCanvasQTAgg):
 
         super().__init__(fig)
 
-    def update_bar_chart_EXP(self, expense_data):
+    def update_plot_chart_EXP(self, expense_data):
 
         self.axes.clear()
         total_expenses = {}
@@ -83,7 +111,39 @@ class calculate_totals(FigureCanvasQTAgg):
         for index, revenue in revenue_data.iterrows():
             total_revenues += float(revenue[2].replace('$', '').replace(',', ''))
 
-        self.axes.bar(['Expenses', 'Revenues'], [total_expenses, total_revenues], color=['red', 'green'], label=['Expenses', 'Revenues'])
+        bars = self.axes.bar(['Expenses', 'Revenues'], [total_expenses, total_revenues], color=['red', 'green'], label=['Expenses', 'Revenues'])
+        self.axes.bar_label(bars, padding=3)
+        self.axes.set_ylim(0, max([total_expenses, total_revenues]) * 1.1)
+        self.axes.set_title("Total Expenses vs Revenues")
+        self.axes.set_ylabel("$")
+
+        self.draw()
+
+class calculate_month_totals(FigureCanvasQTAgg):
+    def __init__(self):
+        fig = Figure(figsize=(6, 4))
+        self.axes = fig.add_subplot(111)
+
+        super().__init__(fig)
+
+    def update_bar_chart_month_totals(self, expense_data, revenue_data, current_month):
+
+        self.axes.clear()
+        total_expenses = 0
+        total_revenues = 0
+        for index, expense in expense_data.iterrows():
+            day, month, year = expense[6].split('/')
+            if int(month) == int(current_month):
+                total_expenses += float(expense[2].replace('$', '').replace(',', ''))
+
+        for index, revenue in revenue_data.iterrows():
+            day, month, year = revenue[6].split('/')
+            if int(month) == int(current_month):
+                total_revenues += float(revenue[2].replace('$', '').replace(',', ''))
+
+        bars = self.axes.bar(['Expenses', 'Revenues'], [total_expenses, total_revenues], color=['red', 'green'], label=['Expenses', 'Revenues'])
+        self.axes.bar_label(bars, padding=3)
+        self.axes.set_ylim(0, max([total_expenses, total_revenues]) * 1.1)
         self.axes.set_title("Total Expenses vs Revenues")
         self.axes.set_ylabel("$")
 
@@ -95,14 +155,13 @@ class SpentThisMonth(FigureCanvasQTAgg):
         self.axes = fig.add_subplot(111)
 
         super().__init__(fig)
-    def update_spending_this_month(self, expense_data):
+    def update_spending_this_month(self, expense_data, current_month):
 
         self.axes.clear()
         total_spent_per_day = {}
-        current_month = datetime.now().month
         for index, expense in expense_data.iterrows():
             day, month, year = expense[6].split('/')
-            if int(month) == current_month:
+            if int(month) == int(current_month):
                 total_spent_per_day[day] = total_spent_per_day.get(day, 0) + float(expense[2].replace('$', '').replace(',', ''))
 
         days = list(total_spent_per_day.keys())
@@ -144,6 +203,7 @@ class netratio(FigureCanvasQTAgg):
             autopct="%1.1f%%",
             startangle=90
         )
+        self.axes.set_title("Category Ratio")
         self.draw()
 
 

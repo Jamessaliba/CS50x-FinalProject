@@ -35,3 +35,25 @@ code | entity | amount | category | sub-category | description | date
 
 search bar: entity/description |category |sub-category | date range
 search returns: number of transactions relating the search | the amount
+
+
+devlog:
+this is just a summary of expirences I've been having during the process of making this project.
+
+
+# the original goal of this project was to make a cloud based user interface where the data would be secured on the cloud, however 
+due to git hubs security rejecting JSON files on a public repository, I've had to move the scope to a localised data set to enure I
+can submit this program in the first place. fortunitly its not to difficult to change the databases but it does mean having to change
+repositorys. tho debating whether or not I should bring all the test files too. (I'll just explain it in the video)
+
+#initial I was going to use SQLite to manage the data sets, but pandas feels like a good transition and less hassel on my end.
+
+#its great how the system knows what rows are being selected makes the process of creating/deleting rows all the more easier.
+
+#I ran into a bug in the program booting up all the scripts a once in the main menu, appearntly whatever window or Qwidget is opened
+with the GUI first pops ups first before disappearing then having the program run normally, so instead of trying to get rid of a bug,
+I made it a feature and put a "loading" page to appear first.
+
+# the navbar examples for this GUI package aren't that great, but the tool bar is cool and the best part is that the user can move
+it to whatever side of the window they like, so I'll just make that the navbar
+

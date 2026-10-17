@@ -7,6 +7,7 @@ import calendar
 import datetime
 import pandas as pd
 from PyQt6.QtCore import QSize, Qt, QDate
+from PyQt6.QtGui import QIcon
 import Spreadsheet_operator as sheet
 
 
@@ -16,8 +17,6 @@ class BudgetWindow(QWidget):
         contanier = QHBoxLayout()
         layout1 = QVBoxLayout()
         layout2 = QVBoxLayout()
-        self.expenses = sheet.get_expense()
-        self.revenues = sheet.get_revenue()
         self.expense_df = pd.read_csv('budget_expenses.csv')
         self.revenue_df = pd.read_csv('budget_revenue.csv')
 
@@ -54,6 +53,7 @@ class BudgetWindow(QWidget):
         self.expenses_table.setHorizontalHeaderLabels(["Item", "Amount", ""])
         self.expenses_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.add_expense_button = QPushButton("add expense")
+        self.add_expense_button.setIcon(QIcon("green_plus.png"))
         self.add_expense_button.pressed.connect(lambda: self.add_row("expense"))
 
         #revenues
@@ -62,6 +62,7 @@ class BudgetWindow(QWidget):
         self.revenues_table.setHorizontalHeaderLabels(["Item", "Amount", ""])
         self.revenues_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.add_revenue_button = QPushButton("add revenues")
+        self.add_revenue_button.setIcon(QIcon("green_plus.png"))
         self.add_revenue_button.pressed.connect(lambda: self.add_row("revenue"))
 
         layout2.addWidget(expense_label)
@@ -102,8 +103,8 @@ class BudgetWindow(QWidget):
         self.budget_table.setItem(0, 1, QTableWidgetItem(f"{self.monthly_allowence:,.2f}"))
         self.budget_table.setItem(1, 1, QTableWidgetItem(f"{self.monthly_allowence/30.4:,.2f}"))
         self.budget_table.setItem(2, 1, QTableWidgetItem(f"{self.spent_this_month:,.2f}"))
-        self.budget_table.setItem(3, 1, QTableWidgetItem(f"{num_days_in_month}"))
-        self.budget_table.setItem(4, 1, QTableWidgetItem(f"{remaining_days}"))
+        self.budget_table.setItem(3, 1, QTableWidgetItem(f"{remaining_days}"))
+        self.budget_table.setItem(4, 1, QTableWidgetItem(f"{num_days_in_month}"))
         self.budget_table.setItem(5, 1, QTableWidgetItem(f"{self.monthly_allowence - self.spent_this_month:,.2f}"))
         self.budget_table.setItem(6, 1, QTableWidgetItem(f"{daily_spending:,.2f}"))
         self.budget_table.setItem(7, 1, QTableWidgetItem(f"{self.spent_this_month/(int(today)):.2f}"))
@@ -159,45 +160,65 @@ class BudgetWindow(QWidget):
         self.revenue_df.to_csv('budget_revenue.csv', index=False)
 
     def generate_right_table(self):
+        #expenses
+        self.expenses_table.setRowCount(len(self.expense_df))
         for i, row in self.expense_df.iterrows():
-            self.expenses_table.setItem(i, 0, QTableWidgetItem(row["item"]))
+            self.expenses_table.setItem(i, 0, QTableWidgetItem(str(row["item"])))
             self.expenses_table.setItem(i, 1, QTableWidgetItem(str(row["amount"])))
-            expense_delete_button = QPushButton("delete")
-            expense_delete_button.clicked.connect(self.delete_row)
-            self.expenses_table.setCellWidget(i, 2, expense_delete_button)
+            self.expenses_table.setCellWidget(i, 2, self.create_centered_delete_button())
 
+        # Revenues
+        self.revenues_table.setRowCount(len(self.revenue_df))
         for i, row in self.revenue_df.iterrows():
-            self.revenues_table.setItem(i, 0, QTableWidgetItem(row["item"]))
+            self.revenues_table.setItem(i, 0, QTableWidgetItem(str(row["item"])))
             self.revenues_table.setItem(i, 1, QTableWidgetItem(str(row["amount"])))
-            revenue_delete_button = QPushButton("delete")
-            revenue_delete_button.clicked.connect(self.delete_row)
-            self.revenues_table.setCellWidget(i, 2, revenue_delete_button)
+            self.revenues_table.setCellWidget(i, 2, self.create_centered_delete_button())
+
 
     def add_row(self, worksheet):
         if worksheet == "expense":
-            row_position = self.expenses_table.rowCount()
-            self.expenses_table.insertRow(row_position)
-            delete_button = QPushButton("delete")
-            delete_button.clicked.connect(self.delete_row)
-            self.expenses_table.setCellWidget(row_position, 2, delete_button)
-
+            table = self.expenses_table
         elif worksheet == "revenue":
-            row_position = self.revenues_table.rowCount()
-            self.revenues_table.insertRow(row_position)
-            delete_button = QPushButton("delete")
-            delete_button.clicked.connect(self.delete_row)
-            self.revenues_table.setCellWidget(row_position, 2, delete_button)
+            table = self.revenues_table
+        else:
+            return
+
+        row_position = table.rowCount()
+        table.insertRow(row_position)
+
+        table.setCellWidget(row_position, 2, self.create_centered_delete_button())
 
     def delete_row(self):
         button = self.sender()
         if button is None:
             return
-        # Find which table contains the button
+
         for table in [self.expenses_table, self.revenues_table]:
             for row in range(table.rowCount()):
-                if table.cellWidget(row, 2) == button:
+                container = table.cellWidget(row, 2)
+
+                if container is not None and button in container.findChildren(QPushButton):
                     table.removeRow(row)
                     return
+
+    def create_delete_button(self):
+        delete_button = QPushButton()
+        delete_button.setIcon(QIcon("red_cross.png"))
+        delete_button.setIconSize(QSize(16, 16))
+        delete_button.setFixedSize(40, 25)
+        delete_button.setToolTip("Delete row")
+        delete_button.clicked.connect(self.delete_row)
+        return delete_button
+
+    def create_centered_delete_button(self):
+        container = QWidget()
+        layout = QHBoxLayout(container)
+
+        layout.addWidget(self.create_delete_button())
+        layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.setContentsMargins(0, 0, 0, 1)
+
+        return container
 
 if __name__ == "__main__":
     app = QApplication([])

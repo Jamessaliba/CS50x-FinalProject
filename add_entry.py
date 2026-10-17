@@ -2,11 +2,14 @@ from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QLabel, QGridLayout,
     QComboBox, QTableWidget, QHeaderView, QPushButton,QDateEdit, QDoubleSpinBox, QLineEdit, QVBoxLayout, QHBoxLayout, QDialog, QDialogButtonBox)
 
-from PyQt6.QtCore import QDate, Qt
+from PyQt6.QtCore import QDate, Qt, pyqtSignal
 from PyQt6.QtGui import QIcon
 import os
 import pandas as pd
 import Spreadsheet_operator as sheet
+import report_page 
+import statistics_page
+import view_entrys
 
 class WorksheetDialog(QDialog):
     def __init__(self, worksheets, parent=None):
@@ -37,8 +40,10 @@ class WorksheetDialog(QDialog):
         return self.worksheet_box.currentText()
     
 class ReportWindow(QWidget):
+    data_saved = pyqtSignal()
     def __init__(self):
         super().__init__()
+        #background data
         self.setWindowTitle("Accounting Add entry")
         self.table = QTableWidget(0, 9)
         self.expenses = sheet.get_expense()
@@ -57,18 +62,28 @@ class ReportWindow(QWidget):
         self.taxable = ["FALSE","TRUE"]
         self.row_worksheets = {}
 
-        self.print_button = QPushButton('Save')
-        self.print_button.pressed.connect(self.save_content)
+        #layout
+        self.save_button = QPushButton('Save')
+        self.save_button.pressed.connect(self.save_content)
 
         self.add_row = QPushButton("add row")
         self.add_row.pressed.connect(self.select_worksheet)
+        self.add_expense_button = QPushButton("Expenses")
+        self.add_expense_button.setFixedSize(200,25)
+        self.add_revenue_button = QPushButton("Revenue")
+        self.add_revenue_button.setFixedSize(200,25)
 
-        layout = QGridLayout()
-        layout.addWidget(self.table, 0,0)
-        layout.addWidget(self.print_button,1,0)
-        layout.addWidget(self.add_row)
+        add_entry_layout = QHBoxLayout()
+        add_entry_layout.setAlignment(Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
+        add_entry_layout.addWidget(self.add_expense_button)
+        add_entry_layout.addWidget(self.add_revenue_button)
+        container = QVBoxLayout()
+        container.addLayout(add_entry_layout)
+        container.addWidget(self.table)
+        container.addWidget(self.save_button)
+        container.addWidget(self.add_row)
 
-        self.setLayout(layout)
+        self.setLayout(container)
 
     def select_worksheet(self):
         """Ask the user which worksheet the new row belongs to."""
@@ -114,6 +129,8 @@ class ReportWindow(QWidget):
         for row in range(self.table.rowCount()):
             self.table.removeRow(row)
         self.table.setRowCount(0)
+
+        self.data_saved.emit()
 
 
     def increase_rows(self, worksheet_name):
