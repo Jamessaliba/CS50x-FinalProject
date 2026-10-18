@@ -1,18 +1,13 @@
-from PyQt6.QtCore import QSize, Qt, pyqtSignal
-from PyQt6.QtGui import QAction, QIcon, QKeySequence
+from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QApplication,
     QHBoxLayout,
     QMainWindow,
-    QPushButton,
     QStackedLayout,
     QToolBar,
     QVBoxLayout,
     QWidget,
     QLabel)
-
-from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
 
 from report_page import ReportWindow
 from add_entry import ReportWindow as AddEntryReportWindow
@@ -83,6 +78,7 @@ class MainWindow(QMainWindow):
         statistics_page = statisticsPage()
         self.stacklayout.addWidget(statistics_page)
 
+        #update other pages when event is triggered
         add_entry_page.data_saved.connect(overview_page.get_data)
         add_entry_page.data_saved.connect(view_entry.get_data)
         add_entry_page.data_saved.connect(statistics_page.get_data)

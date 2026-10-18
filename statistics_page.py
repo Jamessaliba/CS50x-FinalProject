@@ -1,11 +1,10 @@
 from PyQt6.QtWidgets import (
-    QApplication, QHBoxLayout, QMainWindow, QVBoxLayout, QWidget, QLabel, QGridLayout,
-    QComboBox, QTableWidget, QTableWidgetItem, QHeaderView
+    QApplication, QHBoxLayout, QVBoxLayout, QWidget,
+    QComboBox,
 )
-from PyQt6.QtCore import QDate, Qt
+from PyQt6.QtCore import Qt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
-import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
 import Spreadsheet_operator as sheet_data
@@ -13,28 +12,31 @@ import Spreadsheet_operator as sheet_data
 class statisticsPage(QWidget):
     def __init__(self):
         super().__init__()
+        #set up layouts
         controls_layout =QHBoxLayout()
         controls_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         top_layout = QHBoxLayout()
         bottom_layout = QHBoxLayout()
+
+        #set up month drop box
         self.current_month = datetime.now().strftime("%m")
         months_to_date = [f"{i:02d}" for i in range(1, int(self.current_month) + 1)]
-
         self.month = QComboBox()
         self.month.addItems(months_to_date)
         self.month.setFixedSize(200,25)
         self.month.setCurrentText(self.current_month)
+
+        #set up graphs
         self.monthly_expenses = MonthlyExpenses()
         self.totals_amounts = calculate_totals()
         self.spending_per_day = SpentThisMonth()
         self.netratio = netratio()
         self.month_totals = calculate_month_totals()
 
+        #populate graphs
         self.get_data()
 
         controls_layout.addWidget(self.month)
-
-        #should only be affected by the month drop box
         top_layout.addWidget(self.netratio)
         top_layout.addWidget(self.spending_per_day)
         top_layout.addWidget(self.month_totals)
@@ -63,6 +65,7 @@ class statisticsPage(QWidget):
         self.netratio.update_Piechart(self.expense_data, self.month.currentText())
         self.month_totals.update_bar_chart_month_totals(self.expense_data,self.revenue_data,self.month.currentText())
 
+#Totals expenses graph for the year with data up to the previous month
 class MonthlyExpenses(FigureCanvasQTAgg):
     def __init__(self):
         fig = Figure(figsize=(6, 4))
@@ -94,6 +97,7 @@ class MonthlyExpenses(FigureCanvasQTAgg):
 
         self.draw()
 
+#total expenses and revenue up to today
 class calculate_totals(FigureCanvasQTAgg):
     def __init__(self):
         fig = Figure(figsize=(6, 4))
@@ -119,6 +123,7 @@ class calculate_totals(FigureCanvasQTAgg):
 
         self.draw()
 
+#totals of the selected months total expenses and revenues
 class calculate_month_totals(FigureCanvasQTAgg):
     def __init__(self):
         fig = Figure(figsize=(6, 4))
@@ -149,6 +154,7 @@ class calculate_month_totals(FigureCanvasQTAgg):
 
         self.draw()
 
+#line graph of spending each day of selected month
 class SpentThisMonth(FigureCanvasQTAgg):
     def __init__(self):
         fig = Figure(figsize=(6, 4))

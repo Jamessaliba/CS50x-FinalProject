@@ -38,7 +38,7 @@ search returns: number of transactions relating the search | the amount
 
 
 devlog:
-this is just a summary of expirences I've been having during the process of making this project.
+this is just a summary of expirences and design choices I've been having during the process of making this project.
 
 
 # the original goal of this project was to make a cloud based user interface where the data would be secured on the cloud, however 
@@ -57,3 +57,14 @@ I made it a feature and put a "loading" page to appear first.
 # the navbar examples for this GUI package aren't that great, but the tool bar is cool and the best part is that the user can move
 it to whatever side of the window they like, so I'll just make that the navbar
 
+#I was considering making a tax system into the program, it would calculate the users total taxable income based on if the rows taxable 
+was set to true and then filter the total by whatever tax bracket would fall into based on the algorithim I make. however the tax system
+between Australia and America are different, not to mention I have no clue on how their taxes work so this will be an indepentant project
+
+#for the catagories I think these are approppriate by an individual level, for the subcategories I gathered them from the banking
+app I use the most since its a good range of catagories on their own.
+
+# my partner made a valid point when she was going through my program and mentioned that the entries were inconsistant in the database
+which my perspective is from human error (and me not paying attention), so I implemented a search bar with a drop down of the already 
+existing entities to reduce this issue, fortunitly there is a completer function in the documentation of the GUI library so it was easy
+enough to implement, also made sure to use a set and not a list so there are no repeated entities in the completer.

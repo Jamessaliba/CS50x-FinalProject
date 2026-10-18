@@ -1,5 +1,3 @@
-
-import os
 import pandas as pd
 
 # Replace these with your existing implementations.
@@ -15,8 +13,8 @@ def get_revenue():
     revenuerows = worksheet_revenue[1:]
     return revenuerows
 
+#fetches totals and counts of each catgory in the files
 def cata_totals_count(data, month):
-
     total = {}
     count = {}
 
@@ -35,6 +33,7 @@ def cata_totals_count(data, month):
 
     return total, count
 
+#returns the total and count of a specific month
 def monthly_sheet_totals_count(data, month):
     total = 0
     count = 0
@@ -50,6 +49,7 @@ def monthly_sheet_totals_count(data, month):
 
     return total, count
 
+#returns the total of unnecesary and restrant transactions only
 def spent_month(month):
     data = get_expense()
     total_spent = 0

@@ -1,10 +1,8 @@
 
 from PyQt6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QLabel, QGridLayout,
+    QApplication, QWidget, QLabel, QGridLayout,
     QComboBox, QTableWidget, QTableWidgetItem, QHeaderView
 )
-from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
 import Spreadsheet_operator as sheet_data
 from datetime import datetime
 
@@ -12,27 +10,27 @@ class ReportWindow(QWidget):
     def __init__(self):
         super().__init__()
 
+        #gather data
         self.expense_data = sheet_data.get_expense()
         self.revenue_data = sheet_data.get_revenue()
         self.current_month = datetime.now().strftime("%m")
+
+        #set up month dropbox
         months_to_date = [f"{i:02d}" for i in range(1, int(self.current_month) + 1)]
         self.month = QComboBox()
         self.month.addItems(months_to_date)
         self.month.setCurrentText(self.current_month)
 
+        #set up tables
         self.expense_table = QTableWidget()
         self.revenue_table = QTableWidget()
         self.totals_table = QTableWidget()
         self.totals_table.setColumnCount(3)
-        self.totals_table.setHorizontalHeaderLabels(
-            ["Total expenses", "Total revenue", "net profit/loss"]
-        )
+        self.totals_table.setHorizontalHeaderLabels(["Total expenses", "Total revenue", "net profit/loss"])
         self.totals_table.verticalHeader().hide()
         self.totals_table.setAlternatingRowColors(True)
         self.totals_table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
-        self.totals_table.horizontalHeader().setSectionResizeMode(
-                QHeaderView.ResizeMode.Stretch
-            )
+        self.totals_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
         self.create_tables()
 
@@ -76,7 +74,6 @@ class ReportWindow(QWidget):
     def populate_expense_table(self, month):
         totals, counts = sheet_data.cata_totals_count(self.expense_data, month)
         categories = ["Necessary","Groceries", "Unnecessary", "Restaurant", "Temporary"]
-        print(totals, counts)
         self.expense_table.setRowCount(len(categories))
         for category in categories:
             total = totals.get(category, 0)

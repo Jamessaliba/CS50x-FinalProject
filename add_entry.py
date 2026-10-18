@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QLabel, QGridLayout,
-    QComboBox, QTableWidget, QHeaderView, QPushButton,QDateEdit, QDoubleSpinBox, QLineEdit, QVBoxLayout, QHBoxLayout, QDialog, QDialogButtonBox)
+    QComboBox, QTableWidget, QHeaderView, QPushButton,QDateEdit, QDoubleSpinBox, QLineEdit,
+      QVBoxLayout, QHBoxLayout, QDialog, QDialogButtonBox, QCompleter)
 
 from PyQt6.QtCore import QDate, Qt, pyqtSignal
 from PyQt6.QtGui import QIcon
@@ -10,34 +11,6 @@ import Spreadsheet_operator as sheet
 import report_page 
 import statistics_page
 import view_entrys
-
-class WorksheetDialog(QDialog):
-    def __init__(self, worksheets, parent=None):
-        super().__init__(parent)
-
-        layout = QVBoxLayout()
-
-        label = QLabel("Select the worksheet for this entry:")
-        layout.addWidget(label)
-
-        self.worksheet_box = QComboBox()
-        self.worksheet_box.addItems(worksheets)
-        layout.addWidget(self.worksheet_box)
-
-        buttons = QDialogButtonBox(
-            QDialogButtonBox.StandardButton.Ok |
-            QDialogButtonBox.StandardButton.Cancel
-        )
-
-        buttons.accepted.connect(self.accept)
-        buttons.rejected.connect(self.reject)
-
-        layout.addWidget(buttons)
-
-        self.setLayout(layout)
-
-    def selected_worksheet(self):
-        return self.worksheet_box.currentText()
     
 class ReportWindow(QWidget):
     data_saved = pyqtSignal()
@@ -56,21 +29,32 @@ class ReportWindow(QWidget):
         self.expense_categories = ['Necessary','Groceries', 'Unnecessary','Restaurant','Temporary']
         self.revenue_categories = ['Income','Contributions']
         self.sub_categories = ["", "Business", "Bills/utilities", "Education", "Medical", "Insurence", "Transport", "Entertainment", 
-                                     "Gifts", "Shopping", "Super Contributions", "Donations", "For home", "For others", "Alone,", "With Others", 
+                                     "Gifts", "Shopping", "Super Contributions", "Donations", "For home", "For others", "Alone", "With Others", 
                                      "Subscriptions", "Income", "Wage", "interest", "Capital Gains", "Shares", "Contributions", "Refund", "Termination Payment", "Other"]
+        self.sub_categories.sort()
         self.worksheets_name = ["Expenses", "Revenue"]
         self.taxable = ["FALSE","TRUE"]
-        self.row_worksheets = {}
+        self.row_worksheets = {} #used for delete function
+        entity_search = set()
+        for index, item in self.expenses.iterrows():
+            entity_search.add(item[1])
+        for index, item in self.revenues.iterrows():
+            entity_search.add(item[1])
+        self.completer = QCompleter(entity_search)
+        self.completer.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
+        
 
         #layout
         self.save_button = QPushButton('Save')
         self.save_button.pressed.connect(self.save_content)
 
-        self.add_row = QPushButton("add row")
-        self.add_row.pressed.connect(self.select_worksheet)
         self.add_expense_button = QPushButton("Expenses")
+        self.add_expense_button.setIcon(QIcon("green_plus.png"))
+        self.add_expense_button.pressed.connect(lambda: self.select_worksheet(self.add_expense_button.text()))
         self.add_expense_button.setFixedSize(200,25)
         self.add_revenue_button = QPushButton("Revenue")
+        self.add_revenue_button.setIcon(QIcon("green_plus.png"))
+        self.add_revenue_button.pressed.connect(lambda: self.select_worksheet(self.add_revenue_button.text()))
         self.add_revenue_button.setFixedSize(200,25)
 
         add_entry_layout = QHBoxLayout()
@@ -81,18 +65,11 @@ class ReportWindow(QWidget):
         container.addLayout(add_entry_layout)
         container.addWidget(self.table)
         container.addWidget(self.save_button)
-        container.addWidget(self.add_row)
 
         self.setLayout(container)
 
-    def select_worksheet(self):
-        """Ask the user which worksheet the new row belongs to."""
-
-        dialog = WorksheetDialog(self.worksheets_name, self)
-
-        if dialog.exec() == QDialog.DialogCode.Accepted:
-            worksheet_name = dialog.selected_worksheet()
-            self.increase_rows(worksheet_name)
+    def select_worksheet(self, button):
+        self.increase_rows(button)
 
     def save_content(self):
         for row in range(self.table.rowCount()):
@@ -146,6 +123,7 @@ class ReportWindow(QWidget):
             # entity
         entity = QLineEdit()
         entity.setPlaceholderText("Enter Entity...")
+        entity.setCompleter(self.completer)
         self.table.setCellWidget(row, 1, entity)
 
             # Amount
