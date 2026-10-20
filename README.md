@@ -2,25 +2,30 @@
 final project: localised finance tracker
 
 to use script use following commands in terminal
-pip install PyQt6
-pip install PySide6
+...
+* pip install PyQt6
+* pip install PySide6
+...
 
 components: 
-*main user interface
-*calculators (backend?)
-*report window
-*add entry window
-*spending calculator window with sheet
-*overview window
-*search window(provides sum of provided entries)(filtered by date range and text)
-*csv files
-*read me/guide
+...
+* NavBar_maininterface: The main window that the user will interact with to access the other windows
+* add_entry window: Responsible for adding entries to the database
+* budgetor: Responsible for calculating the budget for the current month and calculating the recommended spending for each day
+* report_page: shows the overview of the users expenses, revenue and net profit/loss
+* statistics_page: shows illistrations of the the data through recommended graphs
+* view_entrys: allows the user to view each entry in the data set with the use of search bars and filters
+* Icon_operator: reponsible for fetching the images from the icons folder and returning the requested images to the program
+* Spreadsheet_operator: reponsible for fetching the data from the CSV_files folder and returning the data to the program, as well as performing some calculations
+* read me/guide
+...
 
-categories:    necessary       | unnecessary        | groceries  | Restaurant | temporary    | taxable       | non-taxable
-subcategories: business        |entertainment       | for home   | alone      | subscriptions| income/wage   | contribution	 
-	       	   bills/utilities |gifts               | for others | with others|	             | interest      | gift
-	           education       |shopping					                 				 | capital gains | refund
-	           medical         |super contributions |					     				 | shares        | termination payment
+categories:    necessary       | unnecessary        | groceries  | Restaurant | temporary    | taxable income | non-taxable income
+
+subcategories: business        |entertainment       | for home   | alone      | subscriptions| income/wage    | contribution	 
+	       	   bills/utilities |gifts               | for others | with others|	             | interest       | gifts
+	           education       |shopping			|		                 				 | capital gains  | refund
+	           medical         |super contributions |					     				 | shares         | termination payment
 	           insurance       |
 	           travel
 
