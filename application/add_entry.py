@@ -1,22 +1,22 @@
 from PyQt6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QLabel, QGridLayout,
+    QApplication, QWidget, QLabel,
     QComboBox, QTableWidget, QHeaderView, QPushButton,QDateEdit, QDoubleSpinBox, QLineEdit,
-      QVBoxLayout, QHBoxLayout, QDialog, QDialogButtonBox, QCompleter)
+      QVBoxLayout, QHBoxLayout,QCompleter)
 
 from PyQt6.QtCore import QDate, Qt, pyqtSignal
 from PyQt6.QtGui import QIcon
 import os
+from pathlib import Path
 import pandas as pd
 import Spreadsheet_operator as sheet
-import report_page 
-import statistics_page
-import view_entrys
+import Icon_operator as icon
     
 class ReportWindow(QWidget):
     data_saved = pyqtSignal()
     def __init__(self):
         super().__init__()
         #background data
+        green_plus = icon.get_icon("green_plus.png")
         self.setWindowTitle("Accounting Add entry")
         self.table = QTableWidget(0, 9)
         self.expenses = sheet.get_expense()
@@ -49,11 +49,11 @@ class ReportWindow(QWidget):
         self.save_button.pressed.connect(self.save_content)
 
         self.add_expense_button = QPushButton("Expenses")
-        self.add_expense_button.setIcon(QIcon("green_plus.png"))
+        self.add_expense_button.setIcon(QIcon(green_plus))
         self.add_expense_button.pressed.connect(lambda: self.select_worksheet(self.add_expense_button.text()))
         self.add_expense_button.setFixedSize(200,25)
         self.add_revenue_button = QPushButton("Revenue")
-        self.add_revenue_button.setIcon(QIcon("green_plus.png"))
+        self.add_revenue_button.setIcon(QIcon(green_plus))
         self.add_revenue_button.pressed.connect(lambda: self.select_worksheet(self.add_revenue_button.text()))
         self.add_revenue_button.setFixedSize(200,25)
 
@@ -97,10 +97,14 @@ class ReportWindow(QWidget):
 
             #save file
             df = pd.DataFrame(data)
+            current_directory = Path(__file__).resolve().parent
+            project_directory = current_directory.parent
+            csv_directory = project_directory / "CSV_files"
             if worksheet_tab == 'Expenses':
-                df.to_csv('Expenses_sheet.csv', mode='a', index=False, header=False)
+
+                df.to_csv(os.path.join(csv_directory,'Expenses_sheet.csv'), mode='a', index=False, header=False)
             else:
-                df.to_csv('Revenue_sheet.csv', mode='a', index=False, header=False)
+                df.to_csv(os.path.join(csv_directory,'Revenue_sheet.csv'), mode='a', index=False, header=False)
 
         #remove all rows from the table after saving
         for row in range(self.table.rowCount()):
@@ -166,7 +170,7 @@ class ReportWindow(QWidget):
         self.table.setCellWidget(row, 7, TaxTab)
 
             # Delete button
-        delete_button = QPushButton(icon=QIcon("red_cross.png"), text="")
+        delete_button = QPushButton(icon=QIcon(icon.get_icon("red_cross.png")))
         delete_button.setFixedSize(40, 25)
         delete_button.clicked.connect(lambda checked=False, row=row: self.delete_row(row))
         button_centreing = QHBoxLayout()

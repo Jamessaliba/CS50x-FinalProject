@@ -6,7 +6,6 @@ from PyQt6.QtWidgets import (
 )
 
 from PyQt6.QtCore import QDate, Qt
-import os
 import Spreadsheet_operator as sheet
 
 class ViewEntryWindow(QMainWindow):

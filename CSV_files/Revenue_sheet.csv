@@ -63,3 +63,4 @@ INC0027,jobseeker,$431.82,Income,Income,centerlink payment,01/10/2026,True
 CON0035,leah,$22.60,Contributions,Bills/utilities,bill payment,02/10/2026,False
 CON0036,Steam,$8.79,Contributions,Refund,Refund,06/10/2026,False
 CON0037,jolene,10.0,Contributions,Gifts,money from jolene for something,14/10/2026,FALSE
+INC0028,money,60.0,Income,Bills/utilities,,20/10/2026,FALSE

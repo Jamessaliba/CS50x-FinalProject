@@ -34,6 +34,7 @@ class ReportWindow(QWidget):
 
         self.create_tables()
 
+        #set up layout
         layout = QGridLayout()
         layout.addWidget(QLabel("Month"),0,0)
         layout.addWidget(self.month,0,1)
@@ -61,6 +62,7 @@ class ReportWindow(QWidget):
             table.horizontalHeader().setSectionResizeMode(
                 QHeaderView.ResizeMode.Stretch
             )
+            
     def get_data(self):
         self.expense_data = sheet_data.get_expense()
         self.revenue_data = sheet_data.get_revenue()

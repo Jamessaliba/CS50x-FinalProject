@@ -5,10 +5,13 @@ from PyQt6.QtWidgets import (
 )
 import calendar
 import datetime
+from pathlib import Path
+import os
 import pandas as pd
 from PyQt6.QtCore import QSize, Qt, QDate
 from PyQt6.QtGui import QIcon
 import Spreadsheet_operator as sheet
+import Icon_operator as icon
 
 
 class BudgetWindow(QWidget):
@@ -17,8 +20,7 @@ class BudgetWindow(QWidget):
         contanier = QHBoxLayout()
         layout1 = QVBoxLayout()
         layout2 = QVBoxLayout()
-        self.expense_df = pd.read_csv('budget_expenses.csv')
-        self.revenue_df = pd.read_csv('budget_revenue.csv')
+        self.expense_df, self.revenue_df = sheet.fetch_budgets()
 
         # left side entry layout
         self.budget_table = QTableWidget(8, 2)
@@ -53,7 +55,7 @@ class BudgetWindow(QWidget):
         self.expenses_table.setHorizontalHeaderLabels(["Item", "Amount", ""])
         self.expenses_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.add_expense_button = QPushButton("add expense")
-        self.add_expense_button.setIcon(QIcon("green_plus.png"))
+        self.add_expense_button.setIcon(QIcon(icon.get_icon("green_plus.png")))
         self.add_expense_button.pressed.connect(lambda: self.add_row("expense"))
 
         #revenues
@@ -62,7 +64,7 @@ class BudgetWindow(QWidget):
         self.revenues_table.setHorizontalHeaderLabels(["Item", "Amount", ""])
         self.revenues_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.add_revenue_button = QPushButton("add revenues")
-        self.add_revenue_button.setIcon(QIcon("green_plus.png"))
+        self.add_revenue_button.setIcon(QIcon(icon.get_icon("green_plus.png")))
         self.add_revenue_button.pressed.connect(lambda: self.add_row("revenue"))
 
         layout2.addWidget(expense_label)
@@ -156,8 +158,12 @@ class BudgetWindow(QWidget):
                 self.revenue_df = pd.concat([self.revenue_df, pd.DataFrame({"item": [item.text()], "amount": [float_amount]})], ignore_index=True)
 
         # Save the updated DataFrames to CSV files
-        self.expense_df.to_csv('budget_expenses.csv', index=False)
-        self.revenue_df.to_csv('budget_revenue.csv', index=False)
+        current_directory = Path(__file__).resolve().parent
+        project_directory = current_directory.parent
+        csv_directory = project_directory / "CSV_files"
+
+        self.expense_df.to_csv(os.path.join(csv_directory,'budget_expenses.csv'), index=False)
+        self.revenue_df.to_csv(os.path.join(csv_directory,'budget_revenue.csv'), index=False)
 
     def generate_right_table(self):
         #expenses
@@ -203,7 +209,7 @@ class BudgetWindow(QWidget):
 
     def create_delete_button(self):
         delete_button = QPushButton()
-        delete_button.setIcon(QIcon("red_cross.png"))
+        delete_button.setIcon(QIcon(icon.get_icon("red_cross.png")))
         delete_button.setIconSize(QSize(16, 16))
         delete_button.setFixedSize(40, 25)
         delete_button.setToolTip("Delete row")

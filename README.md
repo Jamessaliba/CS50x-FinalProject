@@ -51,7 +51,7 @@ due to git hubs security rejecting JSON files on a public repository, I've had t
 can submit this program in the first place. fortunitly its not to difficult to change the databases but it does mean having to change
 repositorys. tho debating whether or not I should bring all the test files too. (I'll just explain it in the video)
 
-#initial I was going to use SQLite to manage the data sets, but pandas feels like a good transition and less hassel on my end.
+#initially I was going to use SQLite to manage the data sets, but pandas feels like a good transition and less hassel on my end.
 
 #its great how the system knows what rows are being selected makes the process of creating/deleting rows all the more easier.
 
@@ -69,7 +69,9 @@ between Australia and America are different, not to mention I have no clue on ho
 #for the catagories I think these are approppriate by an individual level, for the subcategories I gathered them from the banking
 app I use the most since its a good range of catagories on their own.
 
-my partner made a valid point when she was going through my program and mentioned that the entries were inconsistant in the database
+#my partner made a valid point when she was going through my program and mentioned that the entries were inconsistant in the database
 which my perspective is from human error (and me not paying attention), so I implemented a search bar with a drop down of the already 
 existing entities to reduce this issue, fortunitly there is a completer function in the documentation of the GUI library so it was easy
 enough to implement, also made sure to use a set and not a list so there are no repeated entities in the completer.
+
+#I decided to organise my files so its a bit easier to sort through, however it can to the cost of having to write another script to adjust to the changes but at least it looks neater now. this now becomes the point where I have to stop since now I'm organising my folders and creating more work for my self.

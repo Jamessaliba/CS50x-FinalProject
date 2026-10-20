@@ -1,17 +1,32 @@
 import pandas as pd
+from pathlib import Path
+import os
 
-# Replace these with your existing implementations.
+def set_dir():
+    current_directory = Path(__file__).resolve().parent
+    project_directory = current_directory.parent
+    csv_directory = project_directory / "CSV_files"
+    os.chdir(csv_directory)
+
 def get_expense():
 #expense sheet
+    set_dir()
     worksheet_expense = pd.read_csv('Expenses_sheet.csv', header=None)
     expenserows = worksheet_expense[1:]
     return expenserows
     
 def get_revenue():
 #revenue sheet
+    set_dir()
     worksheet_revenue = pd.read_csv('Revenue_sheet.csv', header=None)
     revenuerows = worksheet_revenue[1:]
     return revenuerows
+
+def fetch_budgets():
+    set_dir()
+    budget_expenses = pd.read_csv('budget_expenses.csv')
+    budget_revenues = pd.read_csv('budget_revenue.csv')
+    return budget_expenses, budget_revenues
 
 #fetches totals and counts of each catgory in the files
 def cata_totals_count(data, month):
@@ -61,4 +76,4 @@ def spent_month(month):
     return total_spent
 
 if __name__ == "__main__":
-    expense = get_expense()
+    set_dir()
