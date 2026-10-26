@@ -95,8 +95,9 @@ class BudgetWindow(QWidget):
         self.monthly_allowence = self.total_revenue - self.total_expenses
         current_date = datetime.date.today()
         today = str(current_date).split('-')[2]
+        month = str(current_date).split('-')[1]
         _, num_days_in_month = calendar.monthrange(current_date.year, current_date.month)
-        self.spent_this_month = sheet.spent_month('09')
+        self.spent_this_month = sheet.spent_month(month)
         remaining_days = int(num_days_in_month) - int(today) +1
         try:
             daily_spending = (self.monthly_allowence - self.spent_this_month)/remaining_days
