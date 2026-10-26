@@ -507,5 +507,4 @@ GRO0191,Too good to go,10.0,Groceries,For home,For home,13/10/2026,FALSE
 GRO0192,Too good to go,4.99,Groceries,For home,For home,13/10/2026,FALSE
 RES0119,Laksa Hut,20.0,Restaurant,With Others,With others,13/10/2026,FALSE
 NEC0069,coles,20.0,Necessary,For home,at home,14/10/2026,FALSE
-NEC0070,test,20.0,Necessary,Bills/utilities,help,20/10/2026,FALSE
-NEC0071,test2,30.0,Necessary,Bills/utilities,,20/10/2026,FALSE
+GRO0193,Coles,20.0,Groceries,For home,groceries for home,21/10/2026,FALSE

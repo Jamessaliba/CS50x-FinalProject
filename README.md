@@ -1,14 +1,8 @@
-# CS50x Final Project
-final project: localised finance tracker
-
-to use script use following commands in terminal
-...
-* pip install PyQt6
-* pip install PySide6
-...
+# My Accounting
+#### Video Demo: https://youtu.be/QWgeDFE7agQ 
+#### Description:
 
 components: 
-...
 * NavBar_maininterface: The main window that the user will interact with to access the other windows
 * add_entry window: Responsible for adding entries to the database
 * budgetor: Responsible for calculating the budget for the current month and calculating the recommended spending for each day
@@ -17,41 +11,44 @@ components:
 * view_entrys: allows the user to view each entry in the data set with the use of search bars and filters
 * Icon_operator: reponsible for fetching the images from the icons folder and returning the requested images to the program
 * Spreadsheet_operator: reponsible for fetching the data from the CSV_files folder and returning the data to the program, as well as performing some calculations
-* read me/guide
-...
+* README.md
 
-categories:    necessary       | unnecessary        | groceries  | Restaurant | temporary    | taxable income | non-taxable income
+## Catagories and Subcatagories:
+### expenses:
+ #### Necessary: 
+Expenses related to non-consumable assets or services deemed required for the preservation of the person and assets used for necessary day to day activities.
+ #### Unnecessary: 
+Expenses related to non-consumable assets or services not deemed required for the preservation of the person.
+ #### Groceries: 
+Expenses related to consumables deemed required for the preservation of the person or others.
+ #### Restaurant: 
+Expenses related to consumables not deemed required for the preservation of a person or could have been alternatively sourced.
+ #### Temporary: 
+Foreseen unnecessary expenses or repeated payments that are not required for the preservation of a person.
 
-subcategories: business        |entertainment       | for home   | alone      | subscriptions| income/wage    | contribution	 
-	       	   bills/utilities |gifts               | for others | with others|	             | interest       | gifts
-	           education       |shopping			|		                 				 | capital gains  | refund
-	           medical         |super contributions |					     				 | shares         | termination payment
-	           insurance       |
-	           travel
+### revenues:
+#### income: 
+Revenue that is taxable by the relevant government
+#### contributions: 
+Revenue that is non-taxable by the relevant government
 
-expenses:
-necessary: expenses related to non-consumable assets or services deemed required for the preservation of the person and assets used for necessary day to day activities 
-unnecessary: expenses related to non-consumable assets or services not deemed required for the preservation of the person
-groceries: expenses related to consumables deemed required for the preservation of the person or others
-Restaurant: expenses related to consumables not deemed required for the preservation of a person or could have been alternatively sourced
-temporary: foreseen unnecessary expenses or repeated payments that are not required for the preservation of a person
+### Catagory/Subcatagory table:
+![image](catagories.png)
+note: the subcatagories are used as a decriptor for the user and can be used for any catagory, this table is only a recommendation.
 
-revenues:
-taxable: revenue that is taxable by the relevant government
-non-taxable: revenue that is non-taxable by the relevant government
-
-csv headers:
+## csv headers for sheets:
 code | entity | amount | category | sub-category | description | date
 
 
-search bar: entity/description |category |sub-category | date range
-search returns: number of transactions relating the search | the amount
+## search bar
+entity/description |category |sub-category | date range.
+ 
 
-devlog:
-this is just a summary of expirences and design choices I've been having during the process of making this project.
+## devlog:
+This is just a summary of expirences and design choices I've been having during the process of making this project.
 
 
-the original goal of this project was to make a cloud based user interface where the data would be secured on the cloud, however 
+#the original goal of this project was to make a cloud based user interface where the data would be secured on the cloud, however 
 due to git hubs security rejecting JSON files on a public repository, I've had to move the scope to a localised data set to enure I
 can submit this program in the first place. fortunitly its not to difficult to change the databases but it does mean having to change
 repositorys. tho debating whether or not I should bring all the test files too. (I'll just explain it in the video)

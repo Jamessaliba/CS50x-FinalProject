@@ -64,3 +64,6 @@ CON0035,leah,$22.60,Contributions,Bills/utilities,bill payment,02/10/2026,False
 CON0036,Steam,$8.79,Contributions,Refund,Refund,06/10/2026,False
 CON0037,jolene,10.0,Contributions,Gifts,money from jolene for something,14/10/2026,FALSE
 INC0028,money,60.0,Income,Bills/utilities,,20/10/2026,FALSE
+CON0038,joe,10.0,Contributions,Contributions,money for groceries,21/10/2026,FALSE
+INC0029,combank,200.0,Income,Wage,work,21/10/2026,FALSE
+CON0039,joe,10.0,Contributions,Contributions,for groceries,21/10/2026,FALSE
